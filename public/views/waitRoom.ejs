@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1 id="userName"><%= user.username %></h1>
+        <input id="teamName" type="text" />
+        <select id="position">
+            <option id="factory">factory</option>
+            <option id="largeMarket">largeMarket</option>
+            <option id="wholesaler">wholesaler</option>
+            <option id="retailer">retailer</option>
+        </select>
+        <button id="createTeam">createTeam</button>
+
+        <br />
+        <select id="allTeams2"> </select>
+        <select id="position2">
+            <option id="factory">factory</option>
+            <option id="largeMarket">largeMarket</option>
+            <option id="wholesaler">wholesaler</option>
+            <option id="retailer">retailer</option>
+        </select>
+        <button id="joinTeam">joinTeam</button> <br />
+        <h1>Your team : <b id="resTeam"></b></h1>
+        <h1>Your position : <b id="resPos"></b></h1>
+        <h1>Your current store :<b id="store"></b></h1>
+        <h1>Your order :</h1>
+        <h1>Turn :<b id="turn"></b></h1>
+        <input type="number" id="order" disabled />
+        <button id="sendOrder" disabled>submit</button>
+        <table border="1" id="allTeams"></table>
+        <script src="/js/socket.io.js"></script>
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/waitRoom.js"></script>
+    </body>
+</html>
