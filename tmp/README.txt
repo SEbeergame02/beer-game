@@ -1,1 +1,0 @@
-Minca is a stupid person
