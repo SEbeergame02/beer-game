@@ -1,3 +1,4 @@
+console.log('hello');
 const http = require("http");
 const { Teams } = require("./utils/teams");
 const { Team } = require("./utils/team");
