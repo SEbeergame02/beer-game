@@ -7,6 +7,7 @@ const app = require("./server");
 var server = http.createServer(app);
 var io = socketIO(server);
 var allTeams = new Teams();
+var orderArr;
 var turn = 0;
 
 io.on("connection", socket => {
@@ -39,8 +40,9 @@ io.on("connection", socket => {
         }
     });
 
-    socket.on("start", () => {
-        turn = 1;
+    socket.on("start", obj => {
+        orderArr = obj.order;
+        turn = turn + 1;
         io.emit("continue", { allTeams, turn });
     });
 

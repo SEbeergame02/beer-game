@@ -17,23 +17,6 @@ $("#sendOrder").click(function() {
     $("#sendOrder").prop("disabled", true);
 });
 
-socket.on("continue", function(obj) {
-    obj.allTeams.allTeams.forEach(team => {
-        if (team.teamName === $("#resTeam").text()) {
-            team.users.forEach(user => {
-                if (user.userName === $("#userName").html()) {
-                    $("#store").text(user.store);
-                }
-            });
-        }
-    });
-    $("#turn").text(obj.turn);
-    $("#order").prop("disabled", false);
-    $("#sendOrder").prop("disabled", false);
-
-    // $("#store").val();
-});
-
 $("#createTeam").click(function() {
     socket.emit(
         "createTeam",
@@ -79,6 +62,23 @@ socket.on("updateTeams", allTeams => {
     }
     $("#allTeams").html(str);
     $("#allTeams2").html(str2);
+});
+
+socket.on("continue", function(obj) {
+    obj.allTeams.allTeams.forEach(team => {
+        if (team.teamName === $("#resTeam").text()) {
+            team.users.forEach(user => {
+                if (user.userName === $("#userName").html()) {
+                    $("#store").text(user.store);
+                }
+            });
+        }
+    });
+    $("#turn").text(obj.turn);
+    $("#order").prop("disabled", false);
+    $("#sendOrder").prop("disabled", false);
+
+    // $("#store").val();
 });
 
 // socket.on("start_game", () => {
