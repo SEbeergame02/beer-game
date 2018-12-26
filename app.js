@@ -1,4 +1,3 @@
-console.log('hello');
 const http = require("http");
 const { Teams } = require("./utils/teams");
 const { Team } = require("./utils/team");
@@ -32,7 +31,7 @@ io.on("connection", socket => {
         var resTeam = allTeams.findTeam(obj.teamName);
         var resUser = resTeam.findUser(obj.userName);
         resUser.order = parseInt(obj.order);
-        console.log(JSON.stringify(allTeams, 2, undefined));
+        //console.log(JSON.stringify(allTeams, 2, undefined));
         if (allTeams.status()) {
             allTeams.reset(turn);
             turn = turn + 1;

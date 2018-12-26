@@ -69,7 +69,7 @@ socket.on("updateTeams", allTeams => {
     var str2 = "";
     for (var i in allTeams.allTeams) {
         str += "<tr>";
-        str += "<td id='teamName'>" + allTeams.allTeams[i].teamName + "</td>";
+        str += "<td>" + allTeams.allTeams[i].teamName + "</td>";
         str2 += "<option>" + allTeams.allTeams[i].teamName + "</option>";
         for (var j in allTeams.allTeams[i].users) {
             str += "<td>" + allTeams.allTeams[i].users[j].userName + "</td>";

@@ -33,37 +33,38 @@ class Team {
             } else if (user.position === "factory") {
                 user.store = user.store - this.findPos("largeMarket").order;
             }
+            console.log(this.round);
             lst.push({ pos: user.position, ord: user.order });
             user.order = -1;
-            if (turn > 1) {
-                this.arrive(turn);
-            }
         });
         this.round.push(lst);
+        if (turn > 2) {
+            this.arrive();
+        }
         // console.log(this.round);
         // console.log(JSON.stringify(this.users));
+    }
+    arrive() {
+        var items = this.round[0];
+        this.round.shift();
+        console.log(items);
+        items.forEach(item => {
+            this.users.forEach(user => {
+                if (user.position === item.pos) {
+                    user.store = user.store + item.ord;
+                }
+            });
+        });
     }
     findPos(pos) {
         var ret;
         this.users.forEach(user => {
-            console.log(user.position);
+            // console.log(user.position);
             if (user.position === pos) {
                 ret = user;
             }
         });
         return ret;
-    }
-    arrive(turn) {
-        if (turn > 2) {
-            var items = this.round.shift();
-            items.forEach(item => {
-                this.users.forEach(user => {
-                    if (user.position === item.pos) {
-                        user.store = user.store + item.ord;
-                    }
-                });
-            });
-        }
     }
     // removeUser(id) {
     //     var user = this.getUser(id);
