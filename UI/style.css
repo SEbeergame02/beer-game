@@ -26,3 +26,14 @@
 .center-block {
     text-align: center;
 }
+
+img {
+    width: 30px;
+    height: 30px;
+    margin-top: 3%;
+}
+
+.modal-body {
+    height: 120px;
+    margin: 50px;
+}
