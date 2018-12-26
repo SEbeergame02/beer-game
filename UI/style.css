@@ -6,8 +6,10 @@
     margin-left: auto;
     margin-right: auto;
     */
-    margin-top: 1%; 
+    /* margin-top: 1%;  */
     background-image: url('./img/beer.jpg');
+    background-repeat: no-repeat; 
+    background-position: 10% -20%;
     background-size: 100%;
 }
 
