@@ -79,7 +79,7 @@ th, td {
     overflow: auto; /*內容超過高度時產生捲軸*/
     margin: 0 auto;
     text-align: justify;
-    border:1px solid rgba(60%,60%,60%, 0.9);
+    /* border:1px solid rgba(60%,60%,60%, 0.9); */
     border-right:none;
     margin: 10px auto 0;
     background-image: url(./img/tbl.png);
@@ -87,7 +87,8 @@ th, td {
     position:relative;
     top:50%;
     background-size: contain;
-    background-attachment: fixed
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 
