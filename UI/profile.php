@@ -19,7 +19,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">BeerGame</a>
+    <a class="navbar-brand" href="Home.html">BeerGame</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="profile.php"><img src="./img/beer.jpg" />&nbsp;</a>
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="profile.php">Your Name</a>
         <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
