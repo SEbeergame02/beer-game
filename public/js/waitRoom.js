@@ -65,6 +65,7 @@ socket.on("updateTeams", allTeams => {
 });
 
 socket.on("continue", function(obj) {
+    console.log(obj);
     obj.allTeams.allTeams.forEach(team => {
         if (team.teamName === $("#resTeam").text()) {
             team.users.forEach(user => {
@@ -85,3 +86,4 @@ socket.on("continue", function(obj) {
 //     $("#order").prop("disabled", false);
 //     $("#sendOrder").prop("disabled", false);
 // });
+

@@ -15,12 +15,12 @@ var UserSchema = new mongoose.Schema({
     },
     imgPath: {
         type: String,
-        required: true,
+        // required: true,
         trim: true
     },
     imgName: {
         type: String,
-        required: true
+        // required: true
     }
 });
 
@@ -52,7 +52,7 @@ UserSchema.pre("save", function(next) {
             return next(err);
         }
         user.password = hash;
-        user.imgPath = user.imgPath.slice(7);
+        // user.imgPath = user.imgPath.slice(7);
         next();
     });
 });
