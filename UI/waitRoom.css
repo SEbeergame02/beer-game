@@ -1,12 +1,4 @@
 #content {
-    /* border: rgb(150, 150 ,150) solid 5px; */
-    /* width: 1000px; */
-    /* 暫時先設這個高度，之後會依照內容延伸 */
-    /* height: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    */
-    /* margin-top: 1%;  */
     background-image: url('./img/beer.jpg');
     background-repeat: no-repeat; 
     background-position: 10% -20%;
@@ -35,17 +27,7 @@ img {
     margin-top: 3%;
 }
 
-/* create a team */
-.modal-body {
-    height: 120px;
-    margin: 50px;
-}
-
-/* join a team */
-body {
-    
-}
-
+/* WaitRoom */
 #tbl {
     overflow: auto;
 }
@@ -73,9 +55,6 @@ th, td {
 }
 .content {
     color: rgb(46, 42, 42);
-    /*div.st加背景圖片並定義與圖片同尺寸*/
-    /* height: 500px;
-    width: 55%; */
     overflow: auto; /*內容超過高度時產生捲軸*/
     margin: 0 auto;
     text-align: justify;
@@ -90,6 +69,3 @@ th, td {
     background-attachment: fixed;
     background-position: center center;
 }
-
-
-
