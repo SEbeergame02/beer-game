@@ -32,9 +32,10 @@ io.on("connection", socket => {
         var resTeam = allTeams.findTeam(obj.teamName);
         var resUser = resTeam.findUser(obj.userName);
         resUser.order = parseInt(obj.order);
-        //console.log(JSON.stringify(allTeams, 2, undefined));
+        // console.log(JSON.stringify(allTeams, 2, undefined));
         if (allTeams.status()) {
-            allTeams.reset(turn);
+            // console.log(parseInt(orderArr[turn - 1]));
+            allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
             io.emit("continue", { allTeams, turn });
         }
@@ -42,6 +43,7 @@ io.on("connection", socket => {
 
     socket.on("start", obj => {
         orderArr = obj.order;
+        console.log(orderArr);
         turn = turn + 1;
         io.emit("continue", { allTeams, turn });
     });

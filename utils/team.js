@@ -21,11 +21,11 @@ class Team {
         })[0];
         return user;
     }
-    reset(turn) {
+    reset(turn, cust) {
         var lst = [];
         this.users.forEach(user => {
             if (user.position === "retailer") {
-                user.store = user.store - 10;
+                user.store = user.store - cust;
             } else if (user.position === "wholesaler") {
                 user.store = user.store - this.findPos("retailer").order;
             } else if (user.position === "largeMarket") {

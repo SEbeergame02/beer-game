@@ -25,9 +25,9 @@ class Teams {
         });
         return ret;
     }
-    reset(turn) {
+    reset(turn, cust) {
         this.allTeams.forEach(team => {
-            team.reset(turn);
+            team.reset(turn, cust);
         });
     }
 }
