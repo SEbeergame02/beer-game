@@ -17,17 +17,17 @@ $("#sendOrder").click(function() {
     $("#sendOrder").prop("disabled", true);
 });
 
-$("#createTeam").click(function() {
+$("#submit").click(function() {
     socket.emit(
         "createTeam",
         {
             userName: $("#userName").html(),
             teamName: $("#teamName").val(),
-            position: $("#position").val()
+            position: $("input[name='pos']:checked").val()
         },
         function(obj) {
-            $("#resTeam").text(obj.teamName);
-            $("#resPos").text(obj.position);
+            //送出之後執行
+            window.location.replace("/playRoom");
         }
     );
 });
@@ -48,20 +48,31 @@ $("#joinTeam").click(function() {
 });
 
 socket.on("updateTeams", allTeams => {
+    // var str = "";
+    // var str2 = "";
+    // for (var i in allTeams.allTeams) {
+    //     str += "<tr>";
+    //     str += "<td>" + allTeams.allTeams[i].teamName + "</td>";
+    //     str2 += "<option>" + allTeams.allTeams[i].teamName + "</option>";
+    //     for (var j in allTeams.allTeams[i].users) {
+    //         str += "<td>" + allTeams.allTeams[i].users[j].userName + "</td>";
+    //         str += "<td>" + allTeams.allTeams[i].users[j].position + "</td>";
+    //     }
+    //     str += "</tr>";
+    // }
+    // $("#allTeams").html(str);
+    // $("#allTeams2").html(str2);
     var str = "";
-    var str2 = "";
-    for (var i in allTeams.allTeams) {
+    for (let i in allTeams.allTeams) {
         str += "<tr>";
-        str += "<td>" + allTeams.allTeams[i].teamName + "</td>";
-        str2 += "<option>" + allTeams.allTeams[i].teamName + "</option>";
+        str += "<th>" + allTeams.allTeams[i].teamName + "</th>";
         for (var j in allTeams.allTeams[i].users) {
-            str += "<td>" + allTeams.allTeams[i].users[j].userName + "</td>";
-            str += "<td>" + allTeams.allTeams[i].users[j].position + "</td>";
+            str += "<th>" + allTeams.allTeams[i].users[j].userName + "</th>";
+            str += "<th>" + allTeams.allTeams[i].users[j].position + "</th>";
         }
         str += "</tr>";
     }
     $("#allTeams").html(str);
-    $("#allTeams2").html(str2);
 });
 
 socket.on("continue", function(obj) {
@@ -83,3 +94,8 @@ socket.on("continue", function(obj) {
 socket.on("end", () => {
     alert("end");
 });
+
+// socket.on("start_game", () => {
+//     $("#order").prop("disabled", false);
+//     $("#sendOrder").prop("disabled", false);
+// });

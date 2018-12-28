@@ -13,8 +13,8 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="Home.css">
-  <title>CreateRoom</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Profile</title>
 </head>
 
 <body>
@@ -30,46 +30,43 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <a href="profile.php"><img src="./img/beer.jpg"/></a>&nbsp;
+        <a href="profile.php"><img src="./img/beer.jpg" />&nbsp;</a>
         <a class="nav-link" href="profile.php">Your Name</a>
         <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
   </nav>
 </nav>
-<div id="content" class="container">
-  <div class="center-block">
-    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">Create</button> &nbsp;
-    <button type="button" class="btn btn-light" onclick="location.href='waitRoom.html'">Join</button>
+<div id="content1" class="content">
+  <div class="inner">
+      <table class="tb1">
+      <tr>
+          <th><img src="./img/beer.jpg" ></th>
+          <td colspan="2"><input type="file" name="photo"></td>
+          
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>123</td>
+          <td> 
+            <?php  echo "<a href='editProfile.php'>修改</a>" ?>
+          </td>
+        </tr>
+        <tr>
+          <th>Password</th>
+          <td>123</td>
+          <td>
+              <?php  echo "<a href='editProfile.php'>修改</a>" ?>
+          </td>
+        </tr>
+        <tr>
+                <td colspan="3"><button type="submit" name="submit">Click</button></td>
+        </tr>
+    </table>
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Create A Team</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Team Name: <input type="text" name="TeamName"><br/><br/>
-        <form action="/action_page.php">
-          <input type="radio" name="gender" value="Factory"> Factory &nbsp;
-          <input type="radio" name="gender" value="Distributor"> Distributor &nbsp;
-          <input type="radio" name="gender" value="Wholesaler"> Wholesaler &nbsp;
-          <input type="radio" name="gender" value="Retailer"> Retailer  
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Confirm</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 </body>
 
 </html>
