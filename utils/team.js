@@ -1,8 +1,8 @@
-// this.retailer;
-// this.wholesaler;
-// this.largeMarket;
-// this.factory;
-// userName:"bryan", teamName: "hello", position: "retailer"
+// this.Retailer;
+// this.Wholesaler;
+// this.Distributor;
+// this.Factory;
+// userName:"bryan", teamName: "hello", position: "Retailer"
 const { Player } = require("./player");
 
 class Team {
@@ -24,14 +24,14 @@ class Team {
     reset(turn, cust) {
         var lst = [];
         this.users.forEach(user => {
-            if (user.position === "retailer") {
+            if (user.position === "Retailer") {
                 user.store = user.store - cust;
-            } else if (user.position === "wholesaler") {
-                user.store = user.store - this.findPos("retailer").order;
-            } else if (user.position === "largeMarket") {
-                user.store = user.store - this.findPos("wholesaler").order;
-            } else if (user.position === "factory") {
-                user.store = user.store - this.findPos("largeMarket").order;
+            } else if (user.position === "Wholesaler") {
+                user.store = user.store - this.findPos("Retailer").order;
+            } else if (user.position === "Distributor") {
+                user.store = user.store - this.findPos("Wholesaler").order;
+            } else if (user.position === "Factory") {
+                user.store = user.store - this.findPos("Distributor").order;
             }
             console.log(this.round);
             lst.push({ pos: user.position, ord: user.order });
