@@ -1,5 +1,5 @@
 #content {
-    background-image: url('./img/beer.jpg');
+    background-image: url('../img/beer.jpg');
     background-repeat: no-repeat; 
     background-position: 10% -20%;
     background-size: 100%;
@@ -32,4 +32,3 @@ img {
     height: 120px;
     margin: 50px;
 }
-
