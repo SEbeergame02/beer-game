@@ -48,20 +48,31 @@ $("#joinTeam").click(function() {
 });
 
 socket.on("updateTeams", allTeams => {
+    // var str = "";
+    // var str2 = "";
+    // for (var i in allTeams.allTeams) {
+    //     str += "<tr>";
+    //     str += "<td>" + allTeams.allTeams[i].teamName + "</td>";
+    //     str2 += "<option>" + allTeams.allTeams[i].teamName + "</option>";
+    //     for (var j in allTeams.allTeams[i].users) {
+    //         str += "<td>" + allTeams.allTeams[i].users[j].userName + "</td>";
+    //         str += "<td>" + allTeams.allTeams[i].users[j].position + "</td>";
+    //     }
+    //     str += "</tr>";
+    // }
+    // $("#allTeams").html(str);
+    // $("#allTeams2").html(str2);
     var str = "";
-    var str2 = "";
-    for (var i in allTeams.allTeams) {
-        str += "<tr>";
-        str += "<td>" + allTeams.allTeams[i].teamName + "</td>";
-        str2 += "<option>" + allTeams.allTeams[i].teamName + "</option>";
+    for(let i in allTeams.allTeams) {
+        str += "<tr>"
+        str += "<th>" + allTeams.allTeams[i].teamName + "</th>";
         for (var j in allTeams.allTeams[i].users) {
-            str += "<td>" + allTeams.allTeams[i].users[j].userName + "</td>";
-            str += "<td>" + allTeams.allTeams[i].users[j].position + "</td>";
+            str += "<th>" + allTeams.allTeams[i].users[j].userName + "</th>";
+            str += "<th>" + allTeams.allTeams[i].users[j].position + "</th>";
         }
         str += "</tr>";
     }
-    $("#allTeams").html(str);
-    $("#allTeams2").html(str2);
+    $("#tbl").html(str);
 });
 
 socket.on("continue", function(obj) {
