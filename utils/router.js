@@ -6,6 +6,10 @@ const User = require("./user");
 
 var upload = multer({ dest: "public/uploads/" });
 
+router.get("/playRoom", auth, (req, res) => {
+    res.render("playRoom");
+});
+
 router.get("/home", auth, (req, res) => {
     res.render("home");
 });

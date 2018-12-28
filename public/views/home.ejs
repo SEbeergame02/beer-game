@@ -31,7 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="profile.php"><img src="./img/beer.jpg" /></a>&nbsp;
-        <a class="nav-link" href="profile.php">Your Name</a>
+        <a id="userName" class="nav-link" href="profile.php">Your Name</a>
         <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
@@ -57,17 +57,15 @@
           </button>
         </div>
         <div class="modal-body">
-          Team Name: <input type="text" name="TeamName"><br /><br />
-          <form action="/action_page.php">
-            <input type="radio" name="gender" value="Factory"> Factory &nbsp;
-            <input type="radio" name="gender" value="Distributor"> Distributor &nbsp;
-            <input type="radio" name="gender" value="Wholesaler"> Wholesaler &nbsp;
-            <input type="radio" name="gender" value="Retailer"> Retailer
-          </form>
+          Team Name: <input id="teamName" type="text" name="TeamName"><br /><br />
+          <input type="radio" name="pos" value="Factory"> Factory &nbsp;
+          <input type="radio" name="pos" value="Distributor"> Distributor &nbsp;
+          <input type="radio" name="pos" value="Wholesaler"> Wholesaler &nbsp;
+          <input type="radio" name="pos" value="Retailer"> Retailer
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Confirm</button>
+          <button id="submit" type="button" class="btn btn-primary">Confirm</button>
         </div>
       </div>
     </div>

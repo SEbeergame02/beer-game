@@ -17,17 +17,16 @@ $("#sendOrder").click(function() {
     $("#sendOrder").prop("disabled", true);
 });
 
-$("#createTeam").click(function() {
+$("#submit").click(function() {
     socket.emit(
         "createTeam",
         {
             userName: $("#userName").html(),
             teamName: $("#teamName").val(),
-            position: $("#position").val()
+            position: $("input[name='pos']:checked").val()
         },
-        function(obj) {
-            $("#resTeam").text(obj.teamName);
-            $("#resPos").text(obj.position);
+        function(obj) { //送出之後執行
+            window.location.replace("/playRoom");
         }
     );
 });
@@ -46,6 +45,8 @@ $("#joinTeam").click(function() {
         }
     );
 });
+
+
 
 socket.on("updateTeams", allTeams => {
     // var str = "";
@@ -72,7 +73,7 @@ socket.on("updateTeams", allTeams => {
         }
         str += "</tr>";
     }
-    $("#tbl").html(str);
+    $("#allTeams").html(str);
 });
 
 socket.on("continue", function(obj) {
@@ -92,6 +93,8 @@ socket.on("continue", function(obj) {
 
     // $("#store").val();
 });
+
+
 
 // socket.on("start_game", () => {
 //     $("#order").prop("disabled", false);
