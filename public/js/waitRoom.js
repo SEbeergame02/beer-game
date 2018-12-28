@@ -78,12 +78,8 @@ socket.on("continue", function(obj) {
     $("#turn").text(obj.turn);
     $("#order").prop("disabled", false);
     $("#sendOrder").prop("disabled", false);
-
-    // $("#store").val();
 });
 
-// socket.on("start_game", () => {
-//     $("#order").prop("disabled", false);
-//     $("#sendOrder").prop("disabled", false);
-// });
-
+socket.on("end", () => {
+    alert("end");
+});

@@ -37,7 +37,11 @@ io.on("connection", socket => {
             // console.log(parseInt(orderArr[turn - 1]));
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
-            io.emit("continue", { allTeams, turn });
+            if (turn == 11) {
+                io.emit("end", { allTeams, turn });
+            } else {
+                io.emit("continue", { allTeams, turn });
+            }
         }
     });
 
