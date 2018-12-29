@@ -62,17 +62,8 @@ socket.on("updateTeams", allTeams => {
     // }
     // $("#allTeams").html(str);
     // $("#allTeams2").html(str2);
-    var str = "";
-    for (let i in allTeams.allTeams) {
-        str += "<tr>";
-        str += "<th>" + allTeams.allTeams[i].teamName + "</th>";
-        for (var j in allTeams.allTeams[i].users) {
-            str += "<th>" + allTeams.allTeams[i].users[j].userName + "</th>";
-            str += "<th>" + allTeams.allTeams[i].users[j].position + "</th>";
-        }
-        str += "</tr>";
-    }
-    $("#allTeams").html(str);
+    // var str = "<tr><th>Teams</th><th>Factory</th><th>Distribution</th><th>Wholesaler</th><th>Retailer</th></tr>";
+
 });
 
 socket.on("continue", function(obj) {

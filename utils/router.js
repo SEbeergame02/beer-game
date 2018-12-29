@@ -65,7 +65,7 @@ router.post("/login", (req, res) => {
                     return res.send(err.message);
                 } else {
                     req.session.userId = user._id;
-                    return res.redirect("/profile");
+                    return res.redirect("/waitRoom");
                 }
             }
         );

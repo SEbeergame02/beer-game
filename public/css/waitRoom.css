@@ -1,9 +1,10 @@
-#content {
+/* #content {
     background-image: url('../img/beer.jpg');
     background-repeat: no-repeat; 
     background-position: 10% -20%;
-    background-size: 100%;
-}
+    background-size: contain;
+    height: 100px;
+} */
 
 .btn.btn-light {
     border: rgba(114, 110, 110, 0.5) solid 3px;
@@ -36,13 +37,15 @@ img {
     border-collapse: collapse;
     margin: 0 auto;
     width: 1000px;
-    position:relative;
+    position: relative;
     top:50%;
-  }
-  
+    
+}
+
 .tbl, th, td {
     border: 1px solid black;
     text-align: center; 
+    background-size: contain;
 }
 
 .tbl img {
