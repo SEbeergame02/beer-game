@@ -63,6 +63,14 @@ socket.on("updateTeams", allTeams => {
     // $("#allTeams").html(str);
     // $("#allTeams2").html(str2);
     // var str = "<tr><th>Teams</th><th>Factory</th><th>Distribution</th><th>Wholesaler</th><th>Retailer</th></tr>";
+    
+    // allTeams 存所有的隊伍，用 for 調出所有隊伍的資料
+    for (var i in allTeams.allTeams) {
+        $("#teamList").insertRow(1);
+        for(let j = 0; j < 5; j++)
+        $("#teamList").rows[1].insertCell(j);
+
+    }
 
 });
 
