@@ -9,11 +9,12 @@
 
 port: 3000
 
+- /
 - /register
 - /login
 - /logout
-- /waitRoom
+- /list
 - /admin
 - /profile
 - /playRoom
-- /
+
