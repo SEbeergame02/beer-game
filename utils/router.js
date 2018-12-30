@@ -21,8 +21,8 @@ router.get("/admin", auth, (req, res) => {
     res.render("admin");
 });
 
-router.get("/waitRoom", auth, (req, res) => {
-    res.render("waitRoom", { user: req.user });
+router.get("/list", auth, (req, res) => {
+    res.render("list", { user: req.user });
 });
 
 router.get("/logout", (req, res) => {
