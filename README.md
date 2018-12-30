@@ -16,4 +16,4 @@ port: 3000
 - /admin
 - /profile
 - /playRoom
-- /home
+- /
