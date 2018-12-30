@@ -1,3 +1,31 @@
+#content {
+    background-repeat: no-repeat; 
+    background-position: 10% -20%;
+    background-size: 100%;
+}
+
+.btn.btn-light {
+    border: rgba(114, 110, 110, 0.5) solid 3px;
+    position: relative;
+    margin-top: 40%;
+    width: 80px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(103, 105, 105);
+    background-color: rgba(221, 229, 236, 0.9);
+}
+
+.center-block {
+    text-align: center;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    margin-top: 15%;
+}
+
 #role {
     font-size: 50px;
     font-family: 'Russo One';
@@ -19,6 +47,7 @@ td {
     padding: 10px;
 }
 
-img {
+#F {
     height: 225px;
+    width: 225px;
 }
