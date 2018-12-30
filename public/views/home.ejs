@@ -19,7 +19,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="Home.html">BeerGame</a>
+    <a class="navbar-brand" href="/">BeerGame</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,8 +31,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="profile.php"><img src="./img/beer.jpg" /></a>&nbsp;
-        <a id="userName" class="nav-link" href="profile.php">Your Name</a>
-        <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+        <a id="userName" class="nav-link" href="/profile">
+          <%=name%></a>
+        <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
   </nav>
@@ -41,7 +42,7 @@
     <div class="center-block">
       <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">Create</button>
       &nbsp;
-      <button type="button" class="btn btn-light" onclick="location.href='./waitRoom'">Join</button>
+      <button type="button" class="btn btn-light" onclick="location.href='/waitRoom'">Join</button>
     </div>
   </div>
 
@@ -74,7 +75,7 @@
   <script src="/js/socket.io.js"></script>
   <script src="/js/jquery-3.3.1.min.js"></script>
   <!-- 以上勿動 -->
-  <script src="/js/waitRoom.js"></script>
+  <script src="/js/home.js"></script>
 </body>
 
 </html>

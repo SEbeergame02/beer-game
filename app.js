@@ -18,6 +18,7 @@ io.on("connection", socket => {
     socket.on("createTeam", (obj, callback) => {
         allTeams.addTeam(new Team(obj));
         io.emit("updateTeams", allTeams);
+        console.log(JSON.stringify(allTeams, undefined, 2));
         callback(obj);
     });
 
@@ -26,6 +27,7 @@ io.on("connection", socket => {
         resTeam.addUser(obj);
         io.emit("updateTeams", allTeams);
         callback(obj);
+        console.log(JSON.stringify(allTeams, undefined, 2));
     });
 
     socket.on("sendOrder", obj => {

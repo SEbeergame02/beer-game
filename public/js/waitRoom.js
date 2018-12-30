@@ -1,6 +1,6 @@
 var socket = io({ transports: ["websocket"], upgrade: false });
 
-$("#sendOrder").click(function() {
+$("#sendOrder").click(function () {
     var o = $("#order").val();
     if (o === "" || o < 0) {
         o = 0;
@@ -17,22 +17,9 @@ $("#sendOrder").click(function() {
     $("#sendOrder").prop("disabled", true);
 });
 
-$("#submit").click(function() {
-    socket.emit(
-        "createTeam",
-        {
-            userName: $("#userName").html(),
-            teamName: $("#teamName").val(),
-            position: $("input[name='pos']:checked").val()
-        },
-        function(obj) {
-            //送出之後執行
-            window.location.replace("/playRoom");
-        }
-    );
-});
 
-$("#joinTeam").click(function() {
+
+$("#joinTeam").click(function () {
     socket.emit(
         "joinTeam",
         {
@@ -40,7 +27,7 @@ $("#joinTeam").click(function() {
             teamName: $("#allTeams2").val(),
             position: $("#position2").val()
         },
-        function(obj) {
+        function (obj) {
             $("#resTeam").text(obj.teamName);
             $("#resPos").text(obj.position);
         }
@@ -63,18 +50,18 @@ socket.on("updateTeams", allTeams => {
     // $("#allTeams").html(str);
     // $("#allTeams2").html(str2);
     // var str = "<tr><th>Teams</th><th>Factory</th><th>Distribution</th><th>Wholesaler</th><th>Retailer</th></tr>";
-    
+
     // allTeams 存所有的隊伍，用 for 調出所有隊伍的資料
     for (var i in allTeams.allTeams) {
         $("#teamList").insertRow(1);
-        for(let j = 0; j < 5; j++)
-        $("#teamList").rows[1].insertCell(j);
+        for (let j = 0; j < 5; j++)
+            $("#teamList").rows[1].insertCell(j);
 
     }
 
 });
 
-socket.on("continue", function(obj) {
+socket.on("continue", function (obj) {
     console.log(obj);
     obj.allTeams.allTeams.forEach(team => {
         if (team.teamName === $("#resTeam").text()) {

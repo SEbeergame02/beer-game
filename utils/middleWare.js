@@ -17,10 +17,8 @@ var auth = (req, res, next) => {
             }
         });
     } else {
-        err = new Error("You are not login!");
-        return res.send(err.message);
+        return res.redirect("/login");
     }
 };
 
-module.exports = {auth}
-
+module.exports = { auth };

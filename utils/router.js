@@ -6,12 +6,15 @@ const User = require("./user");
 
 var upload = multer({ dest: "public/uploads/" });
 
-router.get("/playRoom", auth, (req, res) => {
-    res.render("playRoom");
+router.get("/", auth, (req, res) => {
+    res.render("home", {
+        name: req.user.username,
+        img: req.user.imgPath
+    });
 });
 
-router.get("/home", auth, (req, res) => {
-    res.render("home");
+router.get("/playRoom", auth, (req, res) => {
+    res.render("playRoom");
 });
 
 router.get("/admin", auth, (req, res) => {
@@ -39,7 +42,7 @@ router.post("/register", upload.any(), (req, res) => {
     if (req.body.username && req.body.password) {
         var userData = {
             username: req.body.username,
-            password: req.body.password,
+            password: req.body.password
             // imgPath: req.files[0].path,
             // imgName: req.files[0].originalname
         };
@@ -65,7 +68,7 @@ router.post("/login", (req, res) => {
                     return res.send(err.message);
                 } else {
                     req.session.userId = user._id;
-                    return res.redirect("/waitRoom");
+                    return res.redirect("/");
                 }
             }
         );
