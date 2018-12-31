@@ -5,7 +5,6 @@ function setContent() {
 }
 setContent()
 
-
 $("#sendOrder").click(function () {
     var o = $("#order").val();
     if (o === "" || o < 0) {
