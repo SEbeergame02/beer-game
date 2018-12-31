@@ -22,7 +22,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="Home.html">BeerGame</a>
+    <a class="navbar-brand" href="/">BeerGame</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,9 +33,10 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <a href="profile.php"><img src="../img/beer.jpg" /></a>&nbsp;
-        <a class="nav-link" href="/profile">Your Name</a>
-        <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+        <a href="/profile"><img src="../img/beer.jpg" /></a>&nbsp;
+        <a class="nav-link" href="/profile">
+          <%=name%></a>
+        <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
   </nav>
@@ -57,7 +58,7 @@
   </div>
   <!-- <table border="1" id="allTeams"></table>
     <h1 id="userName">
-        <%= user.username %>
+        <%= name %>
     </h1>
     <input id="teamName" type="text" />
     <select id="position">
