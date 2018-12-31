@@ -1,5 +1,11 @@
 var socket = io({ transports: ["websocket"], upgrade: false });
 
+function setContent() {
+    $(".contents").height(14 * $("table tr").height());
+}
+setContent()
+
+
 $("#sendOrder").click(function () {
     var o = $("#order").val();
     if (o === "" || o < 0) {
@@ -53,11 +59,12 @@ socket.on("updateTeams", allTeams => {
 
     // allTeams 存所有的隊伍，用 for 調出所有隊伍的資料
     for (var i in allTeams.allTeams) {
-        $("#teamList").insertRow(1);
-        for (let j = 0; j < 5; j++)
-            $("#teamList").rows[1].insertCell(j);
+        $("#teamList").append("<th>" + allTeams.allTeams[i].teamName + "</th>");
+        // for (let j = 0; j < 4; j++)
+        //     $("#teamList").rows[1].append(j);
 
     }
+    $("#teamList").rows[0].cells[0].val("123");
 
 });
 

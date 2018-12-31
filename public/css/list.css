@@ -56,7 +56,10 @@ th, td {
     background: rgba(245, 238, 238, 0.6);
     padding: 10px;
 }
-.content {
+/* th {
+    width: 222px;
+} */
+.contents {
     color: rgb(46, 42, 42);
     overflow: auto; /*內容超過高度時產生捲軸*/
     margin: 0 auto;
