@@ -22,7 +22,10 @@ router.get("/admin", auth, (req, res) => {
 });
 
 router.get("/list", auth, (req, res) => {
-    res.render("list", { user: req.user });
+    res.render("list", {
+        name: req.user.username,
+        img: req.user.imgPath
+    });
 });
 
 router.get("/logout", (req, res) => {
