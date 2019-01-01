@@ -9,6 +9,8 @@ var io = socketIO(server);
 var allTeams = new Teams();
 var orderArr;
 var turn = 0;
+allTeams.addTeam(new Team({ userName: "java", position: "Retailer", teamName: "javaTeam" }));
+allTeams.addTeam(new Team({ userName: "python", position: "Factory", teamName: "pythonTeam" }));
 
 io.on("connection", socket => {
     console.log("new user connect", socket.id);
@@ -21,15 +23,15 @@ io.on("connection", socket => {
         allTeams.addTeam(new Team(obj));
         io.emit("updateTeams", allTeams);
         console.log(JSON.stringify(allTeams, undefined, 2));
-        callback(obj);
+        callback();
     });
 
     socket.on("joinTeam", (obj, callback) => {
         var resTeam = allTeams.findTeam(obj.teamName);
         resTeam.addUser(obj);
         io.emit("updateTeams", allTeams);
-        callback(obj);
         console.log(JSON.stringify(allTeams, undefined, 2));
+        callback();
     });
 
     socket.on("sendOrder", obj => {

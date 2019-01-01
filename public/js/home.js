@@ -9,7 +9,7 @@ $("#submit").click(function () {
             teamName: $("#teamName").val(),
             position: $("input[name='pos']:checked").val()
         },
-        function (obj) {
+        function () {
             //送出之後執行
             window.location.replace("/playRoom");
         }
