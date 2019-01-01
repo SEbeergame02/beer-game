@@ -14,7 +14,11 @@ router.get("/", auth, (req, res) => {
 });
 
 router.get("/playRoom", auth, (req, res) => {
-    res.render("playRoom");
+    res.render("playRoom", {
+        name: req.user.username,
+        img: req.user.imgPath
+    });
+
 });
 
 router.get("/admin", auth, (req, res) => {
