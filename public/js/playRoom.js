@@ -1,4 +1,5 @@
 var socket = io({ transports: ["websocket"], upgrade: false });
+// 對應使用者的角色顯示不同標題和圖片
 socket.on("findRole", allTeams => {
     for (var i in allTeams.allTeams) {
         for (var j in allTeams.allTeams[i].users) {
