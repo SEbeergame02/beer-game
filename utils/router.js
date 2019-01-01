@@ -49,9 +49,9 @@ router.post("/register", upload.any(), (req, res) => {
     if (req.body.username && req.body.password) {
         var userData = {
             username: req.body.username,
-            password: req.body.password
-            // imgPath: req.files[0].path,
-            // imgName: req.files[0].originalname
+            password: req.body.password,
+            imgPath: req.files[0].path,
+            imgName: req.files[0].originalname
         };
         User.create(userData, (error, user) => {
             if (error) {
