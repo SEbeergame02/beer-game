@@ -13,6 +13,8 @@ var turn = 0;
 io.on("connection", socket => {
     console.log("new user connect", socket.id);
 
+    socket.emit("getImg", allTeams);
+
     socket.emit("updateTeams", allTeams);
 
     socket.on("createTeam", (obj, callback) => {
