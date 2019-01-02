@@ -1,8 +1,10 @@
 #content {
     background-image: url('../img/beer.jpg');
     background-repeat: no-repeat; 
-    background-position: 10% -20%;
-    background-size: 100%;
+    background-position: center center;
+    background-size: contain;
+    margin: 10px auto 0;
+
 }
 
 .btn.btn-light {
