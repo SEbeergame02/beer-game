@@ -18,3 +18,7 @@ port: 3000
 - /profile
 - /playRoom
 
+store
+order
+cost
+
