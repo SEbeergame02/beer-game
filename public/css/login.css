@@ -4,16 +4,19 @@ img {
     margin-top: 15%;
 }
 
-.content {
+#content1 {
+    
     border: rgb(150, 150 ,150); 
     border-radius: 20px;
-    width: 1000px; 
+    vertical-align: text-top;
+    /* width: 1000px;  */
     /* 暫時先設這個高度，之後會依照內容延伸*/
-    height: 500px;
+    /* height: 500px; */
     background-image: url('../img/log1.jpg');
     background-size: 100%;
-    padding: 10px;
+    padding: 8.1%;
     margin: 10px auto;
+
 }
   
 th {
