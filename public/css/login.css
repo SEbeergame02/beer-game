@@ -1,14 +1,22 @@
 .content {
     border: rgb(150, 150 ,150); 
-    /* border-radius: 30px 30px 30px 30px; */
+    /* border-radius: 30px; */
     margin-left: auto;
     margin-right: auto;
-    background-image: url('../img/beer.jpg');
+    background-image: url('../img/login.jpg');
     background-size: contain;
     padding: 10px;
     background-repeat: no-repeat;
-  }
-  
+    background-position: center center;
+    margin: 10px auto 0;
+
+}
+img {
+    width: 30px;
+    height: 30px;
+    margin-top: 15%;
+}
+
 th{
     text-align:center;
     font-family:fantasy;
