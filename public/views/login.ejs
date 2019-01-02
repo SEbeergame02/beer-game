@@ -33,7 +33,7 @@
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <a href="/profile"><img src=/></a>&nbsp;
+        <a href="/profile"><img src="../img/unknownUser.jpg"></a>&nbsp;
         <a class="nav-link" href="#">Your Name</a>
         <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
       </ul>
@@ -43,19 +43,19 @@
     <div id="content1" class="content">
       <div class="inner">
         <table class="tbl">
-          <form method="post" action="log.php">
+          <form method="post" action="/login">
             <tr><th colspan="2">BeerGame Login Form</th></tr>
             <tr>
               <th>UserName:</th>
                 <td>
-                  <input name="user" type="text" id="user"/>
+                  <input name="username" type="text" id="user"/>
                 </td>
             </tr>
             <tr>
                 <th>Password:</th>
                 <td>
                   <label>
-                  <input name="pwd" type="text" id="pwd" />
+                  <input name="password" type="password" id="pwd" />
                   </label>
                 </td>
             </tr>
@@ -69,7 +69,7 @@
               </tr>
               <tr>
                   <td colspan="2" align="center">
-                  <button type="button" class="btn btn-info  btn-block" onclick="javascript:location.href='signup.html'" value="Signup">Signup</button>
+                  <button type="button" class="btn btn-info  btn-block" onclick="javascript:location.href='/register'" value="Signup">Signup</button>
                 </td>
                 </tr>
             </form>
