@@ -9,13 +9,13 @@ img {
     border-radius: 30px;
     width: 1000px; 
     /* 暫時先設這個高度，之後會依照內容延伸*/
-    height: 900px;
+    height: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -10%;
-    background-image: url('./img/game.png');
+    margin-top: -1%;
+    background-image: url('./img/game.jpg');
     background-position:center;
-    background-size: 100%;
+    background-size: 130%;
     padding: 100px;
   }
   
@@ -41,6 +41,6 @@ th, td {
     margin: 0 auto;
     width: 450px;
     position:relative;
-    margin-top:10%;
+    margin-top:-5%;
     height:350px;
   }
