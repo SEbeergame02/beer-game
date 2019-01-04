@@ -16,8 +16,11 @@ io.on("connection", socket => {
     console.log("new user connect", socket.id);
 
     socket.emit("findRole", allTeams);
+<<<<<<< HEAD
 
     socket.emit("findTeamName", allTeams);
+=======
+>>>>>>> 8483293f0f89469d6637436927a39dcd66a8f616
 
     socket.emit("updateTeams", allTeams);
 

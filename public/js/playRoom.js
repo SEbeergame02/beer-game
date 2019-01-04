@@ -36,6 +36,9 @@ $("#sendOrder").click(function () {
 
 socket.on("continue", function (obj) {
     console.log(obj);
+    // 從前端得到當前使用者的 teamName
+    // 依照得到的 teamName 再去找 user
+    // 再把 user 的 store 抓出來
     obj.allTeams.allTeams.forEach(team => {
         if (team.teamName === $("#resTeam").text()) {
             team.users.forEach(user => {
