@@ -16,27 +16,10 @@ table {
     text-align: center;
 }
 
-td {
-    height: 140px;
-}
 
 #F {
     height: 225px;
     width: 225px;
-}
-
-.imgw {
-    text-align: center;
-    width: 250px;
-    height: 250px;
-    padding: 15px 15px;
-}
-
-.td0 {
-    text-align: left;
-    font-size: 16px;
-    padding: 10px;
-    text-align: left;
 }
 
 input[type=text] {
@@ -60,20 +43,6 @@ input[type=text] {
 .te {
     height: 50px;
     border: 1px solid black;
-}
-
-.tt {
-    overflow: auto; /*內容超過高度時產生捲軸*/
-}
-.st {
-    color: rgb(71, 55, 55); /*文字白色*/
-    height: 450px;
-    width: 850px;
-    overflow: auto; /*內容超過高度時產生捲軸*/
-    margin: 10px auto 0;
-    text-align: justify;
-    border:1px solid rgb(60%,60%,60%);
-    border-right:none;
 }
 
 .inner {
