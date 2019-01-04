@@ -128,3 +128,11 @@ input[type=text] {
     height: 120px;
     margin: 50px;
 }
+
+#tbl {
+    position: relative;
+    margin: 0 auto;
+}
+body{
+    background-color: #e2b318;
+}
