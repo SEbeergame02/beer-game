@@ -7,6 +7,7 @@ class Player {
         this.debt = 0;
         this.storeArr = [];
         this.orderArr = [];
+        this.debtArr = [];
         this.costArr = [];
     }
 }

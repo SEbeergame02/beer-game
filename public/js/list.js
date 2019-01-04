@@ -7,7 +7,7 @@ $(document).ready(function () {
     setContent()
 
     $(document).on("click", ".join", function () {
-        var posArr = [undefined, "Factory", "Distribution", "Wholesaler", "Retailer"];
+        var posArr = [undefined, "Factory", "Distributor", "Wholesaler", "Retailer"];
         var tname = $(this).parent().parent().find("td:first").text();
         var pname = posArr[$(this).parent().index()];
         var un = $("#userName").html().replace(/\\/g, '').trim();

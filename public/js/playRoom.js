@@ -32,6 +32,7 @@ $("#sendOrder").click(function () {
     $("#order").val("");
     $("#order").prop("disabled", true);
     $("#sendOrder").prop("disabled", true);
+
 });
 
 socket.on("continue", function (obj) {
@@ -40,19 +41,32 @@ socket.on("continue", function (obj) {
     // 從前端得到當前使用者的 teamName
     // 依照得到的 teamName 再去找 user
     // 再把 user 的 store 抓出來
+
+    var tbl = `<table class="inner">`;
+
     obj.allTeams.allTeams.forEach(team => {
         if (team.teamName === $("#teamName").text()) {
             team.users.forEach(user => {
                 if (user.userName === un) {
                     $("#store").text(user.store);
                     $("#liab").text(user.debt);
+                    tbl += `<tr>`;
+                    user.debtArr.forEach(elem => {
+                        tbl += `<td>${elem}<td>`
+                    });
+                    tbl += `</tr>`;
                 }
             });
         }
     });
+
+    tbl += `</table>`;
+
+    $("#st1").html(tbl);
     $("#turn").text(obj.turn);
     $("#order").prop("disabled", false);
     $("#sendOrder").prop("disabled", false);
+    console.log(obj.allTeams);
 });
 
 socket.on("start", () => {
