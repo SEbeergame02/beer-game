@@ -45,6 +45,7 @@ socket.on("continue", function (obj) {
             team.users.forEach(user => {
                 if (user.userName === un) {
                     $("#store").text(user.store);
+                    $("#liab").text(user.debt);
                 }
             });
         }
