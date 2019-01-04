@@ -12,10 +12,10 @@ img {
     height: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -1%;
-    background-image: url('./img/game.jpg');
+    margin-top: 0%;
+    background-image: url('./img/signup.jpg');
     background-position:center;
-    background-size: 130%;
+    background-size: 155%;
     padding: 100px;
   }
   
@@ -32,6 +32,7 @@ th, td {
     padding: 20px 5% 1em 20px;
 
 }
+
 .btn{
     font-family: monospace;
     font-size: 18px;
