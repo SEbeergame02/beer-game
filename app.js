@@ -16,7 +16,7 @@ io.on("connection", socket => {
     console.log("new user connect", socket.id);
 
     socket.emit("findRole", allTeams);
-    
+
     socket.emit("findTeamName", allTeams);
 
     socket.emit("updateTeams", allTeams);

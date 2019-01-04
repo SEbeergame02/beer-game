@@ -23,11 +23,11 @@ $("#sendOrder").click(function () {
     }
     var obj = {
         userName: un,
-        teamName: "test",
-        // teamName: $("#resTeam").text(),
+        teamName: $("#teamName").text(),
         position: $("#role").text(),
         order: o
     };
+
     socket.emit("sendOrder", obj);
     $("#order").val("");
     $("#order").prop("disabled", true);

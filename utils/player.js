@@ -4,6 +4,9 @@ class Player {
         this.order = -1;
         this.userName = name;
         this.position = position;
+        this.storeArr = [];
+        this.orderArr = [];
+        this.costArr = [];
     }
 }
 

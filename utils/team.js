@@ -21,16 +21,45 @@ class Team {
         })[0];
         return user;
     }
+
+    calCost(costArr, store) {
+        if (store < 0) {
+            store = Math.abs(store) * 2;
+        }
+        if (costArr.length === 0) {
+            costArr[0] = store;
+        }
+        else {
+            costArr[costAr.length] = costArr[costAr.length - 1] + store;
+        }
+        return costArr;
+    }
+
     reset(turn, cust) {
         var lst = [];
         this.users.forEach(user => {
             if (user.position === "Retailer") {
+                user.storeArr.push(user.store);
+                user.orderArr.push(cust);
+                user.costArr = this.calCost(user.costArr.slice(), user.store);
                 user.store = user.store - cust;
+
             } else if (user.position === "Wholesaler") {
+                user.storeArr.push(user.store);
+                user.orderArr.push(this.findPos("Retailer").order);
+                user.costArr = this.calCost(user.costArr.slice(), user.store);
                 user.store = user.store - this.findPos("Retailer").order;
+
             } else if (user.position === "Distributor") {
+                user.storeArr.push(user.store);
+                user.orderArr.push(this.findPos("Wholesaler").order);
+                user.costArr = this.calCost(user.costArr.slice(), user.store);
                 user.store = user.store - this.findPos("Wholesaler").order;
+
             } else if (user.position === "Factory") {
+                user.storeArr.push(user.store);
+                user.orderArr.push(this.findPos("Factory").order);
+                user.costArr = this.calCost(user.costArr.slice(), user.store);
                 user.store = user.store - this.findPos("Distributor").order;
             }
             console.log(this.round);
