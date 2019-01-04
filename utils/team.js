@@ -43,11 +43,12 @@ class Team {
         if (c < 0) {
             c = Math.abs(c) * 2;
         }
+        // console.log(user.costArr, user.costArr.length);
         if (user.costArr.length === 0) {
             user.costArr[0] = c;
         }
         else {
-            user.costArr[user.costArr.length] = user.calArr[user.costArr.length - 1] + c;
+            user.costArr[user.costArr.length] = user.costArr[user.costArr.length - 1] + c;
         }
     }
 

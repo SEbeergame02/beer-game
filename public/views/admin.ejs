@@ -32,8 +32,9 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <a href="/profile"><img src= <%=img%> /></a>&nbsp;
-        <a class="nav-link" href="/profile"><%=name%></a>
+        <a href="/profile"><img src=<%=img%> /></a>&nbsp;
+        <a class="nav-link" href="/profile">
+          <%=name%></a>
         <a class="nav-link" href="/login" data-toggle="modal" data-target="#exampleModal">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
@@ -43,7 +44,8 @@
       <tr>
         <td class='td0'>
           <h2>It's gaming!</h2>
-          <button class="button" style="vertical-align:middle"><span>START </span></button> <button type="button" class="btn btn-outline-warning btn-lg">SET</button>
+          <button class="button" style="vertical-align:middle" id="start"><span>START </span></button> <button type="button"
+            class="btn btn-outline-warning btn-lg">SET</button>
         </td>
         <td class='tt' rowspan="2">
           <div id="st1" class="st">
@@ -135,7 +137,8 @@
   </table>
   </div>
   <!-- logout -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
