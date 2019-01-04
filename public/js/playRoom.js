@@ -53,17 +53,17 @@ socket.on("continue", function (obj) {
                     $("#liab").text(user.debt);
                     tbl += `<tr class='te'>`;
                     tbl += `<td class='te'>${obj.turn}</td>`;
-                    tbl += `<td class='te'>${user.storeArr[obj.turn - 2]}</td>`;
-                    tbl += `<td class='te'>${user.orderArr[obj.turn - 2]}</td>`;
-                    tbl += `<td class='te'>${user.debtArr[obj.turn - 2]}</td>`;
+                    tbl += `<td class='te'>${user.storeArr[obj.turn - 1]}</td>`;
+                    tbl += `<td class='te'>${user.orderArr[obj.turn - 1]}</td>`;
+                    tbl += `<td class='te'>${user.debtArr[obj.turn - 1]}</td>`;
                     // 當期成本
-                    if (user.store >= 0) {
-                        tbl += `<td class='te'>${user.store}</td>`;
+                    if (user.debt > 0) {
+                        tbl += `<td class='te'>${user.debt * 2}</td>`;
                     } else {
-                        tbl += `<td class='te'>${Math.abs(user.store) * 2}</td>`;
+                        tbl += `<td class='te'>${user.store}</td>`;
                     }
                     // 累積成本
-                    tbl += `<td class='te'>${user.costArr[obj.turn - 2]}</td>`;
+                    tbl += `<td class='te'>${user.costArr[obj.turn - 1]}</td>`;
                     tbl += `</tr>`;
                 }
             });

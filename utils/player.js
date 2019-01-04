@@ -5,10 +5,10 @@ class Player {
         this.userName = name;
         this.position = position;
         this.debt = 0;
-        this.storeArr = [];
-        this.orderArr = [];
-        this.debtArr = [];
-        this.costArr = [];
+        this.storeArr = [15];
+        this.orderArr = [0];
+        this.debtArr = [0];
+        this.costArr = [15];
     }
 }
 
