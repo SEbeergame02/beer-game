@@ -44,4 +44,14 @@ th, td {
     position:relative;
     margin-top:-5%;
     height:350px;
-  }
+}
+
+#agree {
+    width: 400px;
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:white;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+}
