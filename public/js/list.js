@@ -24,7 +24,7 @@ $(document).ready(function () {
         var tbl = `<tr>
                 <th>Teams</th>
                 <th>Factory</th>
-                <th>Distribution</th>
+                <th>Distributor</th>
                 <th>Wholesaler</th>
                 <th>Retailer</th>
                 </tr>`;
@@ -32,15 +32,15 @@ $(document).ready(function () {
         if (allTeams.allTeams.length > 0) {
             for (var i in allTeams.allTeams) {
                 var Factory = `<button class="join" type="button">Join</button>`;
-                var Distribution = `<button class="join" type="button">Join</button>`;
+                var Distributor = `<button class="join" type="button">Join</button>`;
                 var Wholesaler = `<button class="join" type="button">Join</button>`;
                 var Retailer = `<button class="join" type="button">Join</button>`;
                 for (var j in allTeams.allTeams[i].users) {
                     if (allTeams.allTeams[i].users[j].position === "Factory") {
                         Factory = allTeams.allTeams[i].users[j].userName;
                     }
-                    else if (allTeams.allTeams[i].users[j].position === "Distribution") {
-                        Distribution = allTeams.allTeams[i].users[j].userName;
+                    else if (allTeams.allTeams[i].users[j].position === "Distributor") {
+                        Distributor = allTeams.allTeams[i].users[j].userName;
                     }
                     else if (allTeams.allTeams[i].users[j].position === "Wholesaler") {
                         Wholesaler = allTeams.allTeams[i].users[j].userName;
@@ -52,7 +52,7 @@ $(document).ready(function () {
                 str += `<tr>
                 <td>${allTeams.allTeams[i].teamName}</td>
                 <td>${Factory}</td>
-                <td>${Distribution}</td>
+                <td>${Distributor}</td>
                 <td>${Wholesaler}</td>
                 <td>${Retailer}</td>
                 </tr>`;
@@ -60,16 +60,4 @@ $(document).ready(function () {
         }
         $("#teamList").html(tbl + str);
     });
-
-
-
-    // socket.on("end", () => {
-    //     alert("end");
-    // });
-
-    // socket.on("start_game", () => {
-    //     $("#order").prop("disabled", false);
-    //     $("#sendOrder").prop("disabled", false);
-    // });
-
 });

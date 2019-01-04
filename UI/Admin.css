@@ -124,3 +124,7 @@ input[type=text] {
     opacity: 1;
     right: 0;
 }
+.modal-body {
+    height: 120px;
+    margin: 50px;
+}
