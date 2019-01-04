@@ -30,48 +30,74 @@ class Team {
             costArr[0] = store;
         }
         else {
-            costArr[costAr.length] = costArr[costAr.length - 1] + store;
+            costArr[costArr.length] = costArr[costArr.length - 1] + store;
         }
         return costArr;
     }
 
     reset(turn, cust) {
-        var lst = [];
-        this.users.forEach(user => {
-            if (user.position === "Retailer") {
-                user.storeArr.push(user.store);
-                user.orderArr.push(cust);
-                user.costArr = this.calCost(user.costArr.slice(), user.store);
-                user.store = user.store - cust;
-
-            } else if (user.position === "Wholesaler") {
-                user.storeArr.push(user.store);
-                user.orderArr.push(this.findPos("Retailer").order);
-                user.costArr = this.calCost(user.costArr.slice(), user.store);
-                user.store = user.store - this.findPos("Retailer").order;
-
-            } else if (user.position === "Distributor") {
-                user.storeArr.push(user.store);
-                user.orderArr.push(this.findPos("Wholesaler").order);
-                user.costArr = this.calCost(user.costArr.slice(), user.store);
-                user.store = user.store - this.findPos("Wholesaler").order;
-
-            } else if (user.position === "Factory") {
-                user.storeArr.push(user.store);
-                user.orderArr.push(this.findPos("Factory").order);
-                user.costArr = this.calCost(user.costArr.slice(), user.store);
-                user.store = user.store - this.findPos("Distributor").order;
-            }
-            console.log(this.round);
-            lst.push({ pos: user.position, ord: user.order });
-            user.order = -1;
-        });
-        this.round.push(lst);
         if (turn > 2) {
             this.arrive();
         }
-        // console.log(this.round);
-        // console.log(JSON.stringify(this.users));
+        var lst = [];
+        this.users.forEach(user => {
+            if (user.position === "Retailer") {
+                let newStore = user.store - cust - user.debt;
+                if (newStore < 0) {
+                    user.debt = Math.abs(newStore);
+                    user.store = 0;
+                }
+                else {
+                    user.store = newStore;
+                }
+            }
+
+            else if (user.position === "Wholesaler") {
+                let newStore = user.store - this.findPos("Retailer").order - user.debt;
+                if (newStore < 0) {
+                    user.debt = Math.abs(newStore);
+                    user.store = 0;
+                    lst.push({ pos: "Retailer", ord: user.store });
+                }
+                else {
+                    user.store = newStore;
+                    lst.push({ pos: "Retailer", ord: this.findPos("Retailer").order });
+                }
+            }
+
+            else if (user.position === "Distributor") {
+                let newStore = user.store - this.findPos("Wholesaler").order - user.debt;
+                if (newStore < 0) {
+                    user.debt = Math.abs(newStore);
+                    user.store = 0;
+                    lst.push({ pos: "Wholesaler", ord: user.store });
+                }
+                else {
+                    user.store = newStore;
+                    lst.push({ pos: "Wholesaler", ord: this.findPos("Wholesaler").order });
+                }
+            }
+
+            else if (user.position === "Factory") {
+                let newStore = user.store - this.findPos("Wholesaler").order - user.debt;
+                if (newStore < 0) {
+                    user.debt = Math.abs(newStore);
+                    user.store = 0;
+                    lst.push({ pos: "Wholesaler", ord: user.store });
+                }
+                else {
+                    user.store = newStore;
+                    lst.push({ pos: "Wholesaler", ord: this.findPos("Wholesaler").order });
+                }
+                lst.push({ pos: "Factory", ord: user.order });
+            }
+
+            console.log(this.round);
+            user.order = -1;
+        });
+
+        this.round.push(lst);
+
     }
     arrive() {
         var items = this.round[0];

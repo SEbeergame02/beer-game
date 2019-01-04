@@ -7,7 +7,7 @@ const app = require("./server");
 var server = http.createServer(app);
 var io = socketIO(server);
 var allTeams = new Teams();
-var orderArr;
+var orderArr; //customer order array define by admin
 var turn = 0;
 // allTeams.addTeam(new Team({ userName: "java", position: "Retailer", teamName: "javaTeam" }));
 // allTeams.addTeam(new Team({ userName: "python", position: "Factory", teamName: "pythonTeam" }));
@@ -16,11 +16,6 @@ io.on("connection", socket => {
     console.log("new user connect", socket.id);
 
     socket.emit("findRole", allTeams);
-<<<<<<< HEAD
-
-    socket.emit("findTeamName", allTeams);
-=======
->>>>>>> 8483293f0f89469d6637436927a39dcd66a8f616
 
     socket.emit("updateTeams", allTeams);
 
@@ -43,7 +38,7 @@ io.on("connection", socket => {
         var resTeam = allTeams.findTeam(obj.teamName);
         var resUser = resTeam.findUser(obj.userName);
         resUser.order = parseInt(obj.order);
-        // console.log(JSON.stringify(allTeams, 2, undefined));
+        // console.log(JSON.stringify(allTeams, undefined, 2));
         if (allTeams.status()) {
             // console.log(parseInt(orderArr[turn - 1]));
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));

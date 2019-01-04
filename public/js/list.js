@@ -60,16 +60,4 @@ $(document).ready(function () {
         }
         $("#teamList").html(tbl + str);
     });
-
-
-
-    // socket.on("end", () => {
-    //     alert("end");
-    // });
-
-    // socket.on("start_game", () => {
-    //     $("#order").prop("disabled", false);
-    //     $("#sendOrder").prop("disabled", false);
-    // });
-
 });
