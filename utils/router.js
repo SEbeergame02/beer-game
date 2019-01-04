@@ -22,7 +22,10 @@ router.get("/playRoom", auth, (req, res) => {
 });
 
 router.get("/admin", auth, (req, res) => {
-    res.render("admin");
+    res.render("admin", {
+        name: req.user.username,
+        img: req.user.imgPath
+    });
 });
 
 router.get("/list", auth, (req, res) => {
