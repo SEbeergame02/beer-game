@@ -6,24 +6,6 @@ $(document).ready(function () {
     }
     setContent()
 
-    // $("#sendOrder").click(function () {
-    //     var o = $("#order").val();
-    //     if (o === "" || o < 0) {
-    //         o = 0;
-    //     }
-    //     var obj = {
-    //         userName: $("#userName").html(),
-    //         teamName: $("#resTeam").text(),
-    //         position: $("#resPos").text(),
-    //         order: o
-    //     };
-    //     socket.emit("sendOrder", obj);
-    //     $("#order").val("");
-    //     $("#order").prop("disabled", true);
-    //     $("#sendOrder").prop("disabled", true);
-    // });
-
-
     $(document).on("click", ".join", function () {
         var posArr = [undefined, "Factory", "Distribution", "Wholesaler", "Retailer"];
         var tname = $(this).parent().parent().find("td:first").text();
@@ -79,21 +61,7 @@ $(document).ready(function () {
         $("#teamList").html(tbl + str);
     });
 
-    // socket.on("continue", function (obj) {
-    //     console.log(obj);
-    //     obj.allTeams.allTeams.forEach(team => {
-    //         if (team.teamName === $("#resTeam").text()) {
-    //             team.users.forEach(user => {
-    //                 if (user.userName === $("#userName").html()) {
-    //                     $("#store").text(user.store);
-    //                 }
-    //             });
-    //         }
-    //     });
-    //     $("#turn").text(obj.turn);
-    //     $("#order").prop("disabled", false);
-    //     $("#sendOrder").prop("disabled", false);
-    // });
+
 
     // socket.on("end", () => {
     //     alert("end");
