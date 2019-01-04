@@ -32,7 +32,7 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <a href="profile.php"><img src= <%=img%> /></a>&nbsp;
+        <a href="profile.php"><img src=<%=img%> /></a>&nbsp;
         <a class="nav-link" href="/profile" id="userName">
           <%=name%></a>
         <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
@@ -43,8 +43,9 @@
   <div id='content'>
     <table>
       <tr>
-        <td class='td0'>第 ? 期 <br /> Request of Distribution: 45 <br /> Your request: <input class="req" type="text">
-          <button class='sub' type="submit">Sure</button> </td>
+        <td class='td0'>第 ? 期 <br /> Request of Distribution: 45 <br /> Your request: <input id="order" class="req"
+            type="text" disabled>
+          <button class='sub' type="submit" id="sendOrder" disabled>Sure</button> </td>
         <td class='tt' rowspan="2">
           <div id="st1" class="st">
             <table class="inner">
@@ -143,7 +144,7 @@
         </td>
       </tr>
       <tr>
-        <td class='imgw' id='putImgs' > <img id='F'  alt=""> </td>
+        <td class='imgw' id='putImgs'> <img id='F' alt=""> </td>
       </tr>
     </table>
   </div>

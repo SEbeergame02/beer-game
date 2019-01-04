@@ -9,8 +9,8 @@ var io = socketIO(server);
 var allTeams = new Teams();
 var orderArr;
 var turn = 0;
-allTeams.addTeam(new Team({ userName: "java", position: "Retailer", teamName: "javaTeam" }));
-allTeams.addTeam(new Team({ userName: "python", position: "Factory", teamName: "pythonTeam" }));
+// allTeams.addTeam(new Team({ userName: "java", position: "Retailer", teamName: "javaTeam" }));
+// allTeams.addTeam(new Team({ userName: "python", position: "Factory", teamName: "pythonTeam" }));
 
 io.on("connection", socket => {
     console.log("new user connect", socket.id);
