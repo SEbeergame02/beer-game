@@ -79,15 +79,15 @@ class Team {
             }
 
             else if (user.position === "Factory") {
-                let newStore = user.store - this.findPos("Wholesaler").order - user.debt;
+                let newStore = user.store - this.findPos("Distributor").order - user.debt;
                 if (newStore < 0) {
                     user.debt = Math.abs(newStore);
                     user.store = 0;
-                    lst.push({ pos: "Wholesaler", ord: user.store });
+                    lst.push({ pos: "Distributor", ord: user.store });
                 }
                 else {
                     user.store = newStore;
-                    lst.push({ pos: "Wholesaler", ord: this.findPos("Wholesaler").order });
+                    lst.push({ pos: "Distributor", ord: this.findPos("Distributor").order });
                 }
                 lst.push({ pos: "Factory", ord: user.order });
             }
