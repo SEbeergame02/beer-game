@@ -36,7 +36,8 @@ $("#sendOrder").click(function () {
 });
 
 socket.on("continue", function (obj) {
-    console.log(obj);
+    // console.log(obj);
+    console.log(obj.turn + 1);
     var un = $("#userName").html().replace(/\\/g, '').trim();
     // 從前端得到當前使用者的 teamName
     // 依照得到的 teamName 再去找 user
@@ -52,17 +53,17 @@ socket.on("continue", function (obj) {
                     $("#liab").text(user.debt);
                     tbl += `<tr class='te'>`;
                     tbl += `<td class='te'>${obj.turn}</td>`;
-                    tbl += `<td class='te'>${user.storeArr[obj.turn - 1]}</td>`;
-                    tbl += `<td class='te'>${user.orderArr[obj.turn - 1]}</td>`;
-                    tbl += `<td class='te'>${user.debtArr[obj.turn - 1]}</td>`;
+                    tbl += `<td class='te'>${user.storeArr[obj.turn - 2]}</td>`;
+                    tbl += `<td class='te'>${user.orderArr[obj.turn - 2]}</td>`;
+                    tbl += `<td class='te'>${user.debtArr[obj.turn - 2]}</td>`;
                     // 當期成本
-                    if(user.store >= 0) {
+                    if (user.store >= 0) {
                         tbl += `<td class='te'>${user.store}</td>`;
                     } else {
                         tbl += `<td class='te'>${Math.abs(user.store) * 2}</td>`;
                     }
                     // 累積成本
-                    tbl += `<td class='te'>${user.costArr[obj.turn - 1]}</td>`;
+                    tbl += `<td class='te'>${user.costArr[obj.turn - 2]}</td>`;
                     tbl += `</tr>`;
                 }
             });
@@ -73,7 +74,6 @@ socket.on("continue", function (obj) {
     $("#turn").text(obj.turn);
     $("#order").prop("disabled", false);
     $("#sendOrder").prop("disabled", false);
-    console.log(obj.allTeams);
 });
 
 socket.on("start", () => {

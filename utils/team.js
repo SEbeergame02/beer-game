@@ -40,8 +40,8 @@ class Team {
         user.orderArr[user.orderArr.length] = user.order;
         user.debtArr[user.debtArr.length] = user.debt;
         var c = user.store;
-        if (c < 0) {
-            c = Math.abs(c) * 2;
+        if (user.debt > 0) {
+            c = user.debt * 2;
         }
         // console.log(user.costArr, user.costArr.length);
         if (user.costArr.length === 0) {
@@ -59,7 +59,6 @@ class Team {
         var lst = [];
         this.users.forEach(user => {
             if (user.position === "Retailer") {
-                this.calArr(user);
                 let newStore = user.store - cust - user.debt;
                 if (newStore < 0) {
                     user.debt = Math.abs(newStore);
@@ -68,10 +67,10 @@ class Team {
                 else {
                     user.store = newStore;
                 }
+                this.calArr(user);
             }
 
             else if (user.position === "Wholesaler") {
-                this.calArr(user);
                 let newStore = user.store - this.findPos("Retailer").order - user.debt;
                 if (newStore < 0) {
                     user.debt = Math.abs(newStore);
@@ -82,10 +81,10 @@ class Team {
                     user.store = newStore;
                     lst.push({ pos: "Retailer", ord: this.findPos("Retailer").order });
                 }
+                this.calArr(user);
             }
 
             else if (user.position === "Distributor") {
-                this.calArr(user);
                 let newStore = user.store - this.findPos("Wholesaler").order - user.debt;
                 if (newStore < 0) {
                     user.debt = Math.abs(newStore);
@@ -96,10 +95,10 @@ class Team {
                     user.store = newStore;
                     lst.push({ pos: "Wholesaler", ord: this.findPos("Wholesaler").order });
                 }
+                this.calArr(user);
             }
 
             else if (user.position === "Factory") {
-                this.calArr(user);
                 let newStore = user.store - this.findPos("Distributor").order - user.debt;
                 if (newStore < 0) {
                     user.debt = Math.abs(newStore);
@@ -111,6 +110,7 @@ class Team {
                     lst.push({ pos: "Distributor", ord: this.findPos("Distributor").order });
                 }
                 lst.push({ pos: "Factory", ord: user.order });
+                this.calArr(user);
             }
             user.order = -1;
         });
