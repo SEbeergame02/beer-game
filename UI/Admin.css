@@ -12,14 +12,14 @@ img {
 }
 
 table {
-    width: 90%;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    border: 1px solid darkblue;
 }
 
-td {
+/* td {
     height: 140px;
-}
+} */
 
 #F {
     height: 225px;
@@ -34,16 +34,17 @@ td {
 }
 
 .td0 {
+    text-align: left;
     font-size: 16px;
     padding: 10px;
     text-align: left;
 }
 
-input[type=text] {
+/* input[type=text] {
     border: 1px solid rgb(226, 224, 224);
     border-radius: 3px;
     width: 160px;
-}
+} */
 
 .sub {
     font-size: 12px;
@@ -76,9 +77,8 @@ input[type=text] {
     border:1px solid rgb(60%,60%,60%);
     border-right:none;
 }
-.inner {
+#st1 .inner {
     padding: 1em 4%;
-    margin: 30px;
 }
 
 .button {
@@ -121,6 +121,23 @@ input[type=text] {
     right: 0;
 }
 .modal-body {
-    height: 120px;
+    height: 200px;
     margin: 50px;
 }
+
+#set {
+    height: 500px;
+    margin: 50px;
+    overflow: auto;
+}
+
+.demand {
+    width: 60px;
+}
+#tbl {
+    position: relative;
+    margin: 0 auto;
+}
+/* body{
+    background-color: #e2b318;
+} */

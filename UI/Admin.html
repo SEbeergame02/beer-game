@@ -15,7 +15,7 @@
     crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="Admin.css">
+  <link rel="stylesheet" href="../css/Admin.css">
   <title>I'm an admin.</title>
 </head>
 
@@ -44,9 +44,11 @@
       <tr>
         <td class='td0'>
           <h2>It's gaming!</h2>
-          <button class="button" style="vertical-align:middle"><span>START </span></button> <button type="button" class="btn btn-outline-warning btn-lg">SET</button>
+          <!-- <button class="button" style="vertical-align:middle" id="start"><span>START </span></button> -->
+          <button type="button" class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#exampleModalLong">SET</button>
         </td>
         <td class='tt' rowspan="2">
+          <div id="st1" class="st">
             <table class="inner">
               <tr>
                 <th class='te'></th>
@@ -65,21 +67,31 @@
                 <td class='te'></td>
               </tr>
               <tr>
-                  <td class='te'>Hello</td>
-                  <td class='te'></td>
-                  <td class='te'></td>
-                  <td class='te'></td>
-                  <td class='te'></td>
-                  <td class='te'></td>
-                </tr><tr>
-                    <td class='te'>Hello</td>
-                    <td class='te'></td>
-                    <td class='te'></td>
-                    <td class='te'></td>
-                    <td class='te'></td>
-                    <td class='te'></td>
-                  </tr>
+                <td class='te'>Hello</td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+              </tr>
+              <tr>
+                <td class='te'>Hello</td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+              </tr>
+              <tr>
+                <td class='te'>Hello</td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+                <td class='te'></td>
+              </tr>
             </table>
+          </div>
         </td>
       </tr>
     </table>
@@ -95,12 +107,105 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="checkLogout">
           <p align="center">Are you sure?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-primary" onclick="javascript:location.href='/login'">Sure</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- set -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="set">
+          <table>
+            <tr>
+              <td>第 01 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 02 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 03 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 04 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 05 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 06 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 07 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 08 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 09 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 10 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <!-- <tr>
+              <td>第 11 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 12 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 13 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 14 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 15 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 16 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 17 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 18 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 19 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 20 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 21 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 22 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 23 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 24 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 25 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 26 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 27 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 28 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 29 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 30 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 31 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 32 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 33 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 34 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 35 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 36 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 37 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 38 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 39 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 40 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 41 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 42 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 43 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 44 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 45 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr>
+            <tr>
+              <td>第 46 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 47 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 48 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 49 期<input class="demand" type="number" value="30" name="order[]" /></td>
+              <td>第 50 期<input class="demand" type="number" value="30" name="order[]" /></td>
+            </tr> -->
+          </table>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="start">START</button>
         </div>
       </div>
     </div>
