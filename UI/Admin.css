@@ -137,3 +137,13 @@ img {
 h1 {
     font-family: 'Permanent Marker', cursive;
 }
+
+table.table-hover {
+    padding: 1em 4%;
+    width: 90%;
+    text-align: center;
+}
+
+th,td {
+    height: 50px;
+}
