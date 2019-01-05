@@ -1,5 +1,6 @@
 var socket = io({ transports: ["websocket"], upgrade: false });
 var curUser = $("#userName").html().replace(/^\s+|\s+$/g, '');
+
 // 對應使用者的角色顯示不同標題和圖片
 
 socket.on("findRole", allTeams => {
@@ -36,33 +37,34 @@ $("#sendOrder").click(function () {
 });
 
 socket.on("continue", function (obj) {
-    console.log(obj);
+    // console.log(obj);
     var un = $("#userName").html().replace(/\\/g, '').trim();
     // 從前端得到當前使用者的 teamName
     // 依照得到的 teamName 再去找 user
     // 再把 user 的 store 抓出來
-
+    // var thisTurn = $("#turn").html().replace(/^\s+|\s+$/g, '');
     var tbl = $(".inner").html();
-
+    // console.log(thisTurn);
     obj.allTeams.allTeams.forEach(team => {
         if (team.teamName === $("#teamName").text()) {
             team.users.forEach(user => {
+                console.log(obj.turn - 2);
                 if (user.userName === un) {
                     $("#store").text(user.store);
                     $("#liab").text(user.debt);
                     tbl += `<tr class='te'>`;
                     tbl += `<td class='te'>${obj.turn}</td>`;
-                    tbl += `<td class='te'>${user.storeArr[obj.turn - 1]}</td>`;
-                    tbl += `<td class='te'>${user.orderArr[obj.turn - 1]}</td>`;
-                    tbl += `<td class='te'>${user.debtArr[obj.turn - 1]}</td>`;
+                    tbl += `<td class='te'>${user.storeArr[obj.turn - 2]}</td>`;
+                    tbl += `<td class='te'>${user.orderArr[obj.turn - 2]}</td>`;
+                    tbl += `<td class='te'>${user.debtArr[obj.turn - 2]}</td>`;
                     // 當期成本
-                    if(user.store >= 0) {
-                        tbl += `<td class='te'>${user.store}</td>`;
+                    if(user.debt > 0) {
+                        tbl += `<td class='te'>${user.debt * 2}</td>`;
                     } else {
-                        tbl += `<td class='te'>${Math.abs(user.store) * 2}</td>`;
+                        tbl += `<td class='te'>${user.store}</td>`;
                     }
                     // 累積成本
-                    tbl += `<td class='te'>${user.costArr[obj.turn - 1]}</td>`;
+                    tbl += `<td class='te'>${user.costArr[obj.turn - 2]}</td>`;
                     tbl += `</tr>`;
                 }
             });

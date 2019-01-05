@@ -17,12 +17,8 @@ table {
     text-align: center;
 }
 
-td {
+/* td {
     height: 140px;
-}
-
-/* table, td, th {
-    border: 1px solid black;
 } */
 
 #F {
@@ -44,11 +40,11 @@ td {
     text-align: left;
 }
 
-input[type=text] {
+/* input[type=text] {
     border: 1px solid rgb(226, 224, 224);
     border-radius: 3px;
     width: 160px;
-}
+} */
 
 .sub {
     font-size: 12px;
@@ -125,14 +121,23 @@ input[type=text] {
     right: 0;
 }
 .modal-body {
-    height: 120px;
+    height: 200px;
     margin: 50px;
 }
 
+#set {
+    height: 500px;
+    margin: 50px;
+    overflow: auto;
+}
+
+.demand {
+    width: 60px;
+}
 #tbl {
     position: relative;
     margin: 0 auto;
 }
-body{
+/* body{
     background-color: #e2b318;
-}
+} */
