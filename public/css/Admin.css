@@ -4,48 +4,6 @@ img {
     margin-top: 15%;
 }
 
-#role {
-    font-size: 50px;
-    font-family: 'Russo One';
-    text-align: center;
-    background-color: rgba(161, 161, 161, 0.87);
-}
-
-table {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-/* td {
-    height: 140px;
-} */
-
-#F {
-    height: 225px;
-    width: 225px;
-}
-
-.imgw {
-    text-align: center;
-    width: 250px;
-    height: 250px;
-    padding: 15px 15px;
-}
-
-.td0 {
-    text-align: left;
-    font-size: 16px;
-    padding: 10px;
-    text-align: left;
-}
-
-/* input[type=text] {
-    border: 1px solid rgb(226, 224, 224);
-    border-radius: 3px;
-    width: 160px;
-} */
-
 .sub {
     font-size: 12px;
 }
@@ -77,8 +35,11 @@ table {
     border:1px solid rgb(60%,60%,60%);
     border-right:none;
 }
-#st1 .inner {
+
+.inner {
     padding: 1em 4%;
+    width: 90%;
+    text-align: center;
 }
 
 .button {
@@ -129,15 +90,58 @@ table {
     height: 500px;
     margin: 50px;
     overflow: auto;
+    /* background-color:  */
 }
 
 .demand {
     width: 60px;
 }
-#tbl {
-    position: relative;
-    margin: 0 auto;
+
+.col-md-3.col-md-pull-9 {
+    padding: 40px;
 }
-/* body{
-    background-color: #e2b318;
-} */
+
+.btn.btn-outline-warning.btn-lg {
+    width: 90px;
+    border: 3px solid #e2b318;
+    font-size: 22px;
+    font-weight: bolder;
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+table.table-hover {
+    padding: 1em 4%;
+    width: 90%;
+    text-align: center;
+}
+
+th, td {
+    height: 50px;
+    padding: 5px;
+}
+
+.modal-title {
+    font-weight: bolder;
+    font-size: 22px;
+    color: rgb(83, 81, 81);
+}
+
+table, td, th {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-content {
+    height: 600px;
+    background-color: rgb(40, 40, 40);
+    color: #FFFFFF
+    /* width: fit-content;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; */
+}
