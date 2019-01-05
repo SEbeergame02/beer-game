@@ -41,16 +41,17 @@
           </ul>
         </div>
       </nav><br />
-
+        
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <h1 class="h2"></h1>
               <div class="btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group mr-2">
-                    <canvas class="my-4 w-100" id="myChart" ></canvas>
+                <div class="btn-group mr-2" >
+                    <canvas class="my-4 w-100" id="myChart" height=100px ></canvas>
                 </div>    
               </div>
-            </div>
+            <div class="col-md-3 col-md-pull-8">
+              </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -70,6 +71,7 @@
         data: {
           labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           datasets: [{
+            label:"name",
             data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
             lineTension: 0,
             backgroundColor: 'transparent',
