@@ -34,7 +34,12 @@ router.get("/list", auth, (req, res) => {
         img: req.user.imgPath
     });
 });
-
+router.get("/report", auth, (req, res) => {
+    res.render("report", {
+        name: req.user.username,
+        img: req.user.imgPath
+    });
+});
 router.get("/logout", (req, res) => {
     if (req.session) {
         // delete session object
@@ -103,5 +108,6 @@ router.get("/profile", auth, (req, res) => {
         img: req.user.imgPath
     });
 });
+
 
 module.exports = router;
