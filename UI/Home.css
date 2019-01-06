@@ -32,5 +32,6 @@ img {
 .modal-body {
     height: 120px;
     margin: 50px;
+    font-size: 16px;
 }
 
