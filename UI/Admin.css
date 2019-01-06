@@ -42,7 +42,7 @@ img {
     text-align: center;
 }
 
-.button {
+.btn btn-primary {
     display: inline-block;
     border-radius: 4px;
     background-color: #e2b318;
@@ -57,14 +57,14 @@ img {
     margin: 0 auto;
 }
 
-.button span {
+.btn.btn-primary span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.button span:after {
+.btn.btn-primary span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -73,11 +73,11 @@ img {
     transition: 0.5s;
 }
 
-.button:hover span {
+.btn.btn-primary:hover span {
     padding-right: 25px;
 }
 
-.button:hover span:after {
+.btn.btn-primary:hover span:after {
     opacity: 1;
     right: 0;
 }
@@ -149,4 +149,5 @@ table, td, th {
 th {
     font-family: 'Happy Monkey', cursive;
     font-size: 20px;
+    color: rgb(56, 55, 55);
 }
