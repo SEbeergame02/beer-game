@@ -17,6 +17,7 @@ port: 3000
 - /admin
 - /profile
 - /playRoom
+- /report
 
 store
 order
