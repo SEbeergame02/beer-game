@@ -1,5 +1,7 @@
 body {
   font-size: .875rem;
+  background-image: url('./img/result.jpg');
+  background-size: 100%;
 }
 
 img {
@@ -37,9 +39,16 @@ img {
   width: 70%;
 
 }
+
 .col{
   margin-left:25px;
 }
 .col-10{
   margin:80px 0px 0px 150px;
+}
+
+.content {
+  background: rgba(248, 246, 246, 0.7);
+  /* 先設這樣 之後再弄掉 */
+  height: 550px;
 }
