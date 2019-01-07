@@ -221,5 +221,33 @@
                 pC.update(nD);
                 leg.update(nD);
             }
+
+            function mouseout(d){    // utility function to be called on mouseout.
+                // reset the pie-chart and legend.
+                pC.update(tF);
+                leg.update(tF);
+            }
+
+            // create function to update the bars. This will be used by pie-chart.
+            hG.update = function(nD, color){
+                // update the domain of the y-axis map to reflect change in frequencies.
+                y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
+
+                // Attach the new data to the bars.
+                var bars = hGsvg.selectAll(".bar").data(nD);
+
+                // transition the height and color of rectangles.
+                bars.select("rect").transition().duration(500)
+                    .attr("y", function(d) {return y(d[1]); })
+                    .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                    .attr("fill", color);
+
+                // transition the frequency labels location and change value.
+                bars.select("text").transition().duration(500)
+                    .text(function(d){ return d3.format(",")(d[1])})
+                    .attr("y", function(d) {return y(d[1])-5; });
+            }
+            return hG;
+        }
   </script>
 </body>
