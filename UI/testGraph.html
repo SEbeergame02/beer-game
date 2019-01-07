@@ -357,4 +357,16 @@
             leg= legend(tF);  // create the legend.
     }
   </script>
+
+  <script>
+    // ejs 直接填入計算後數值 <%= 變數 =>
+    var freqData=[
+      {State:'#製造商',freq:{低點:4786, 高點:1319, 平均:249}}
+      ,{State:'#上游',freq:{低點:1101, 高點:412, 平均:674}}
+      ,{State:'#中游',freq:{低點:932, 高點:2149, 平均:418}}
+      ,{State:'#下游',freq:{低點:832, 高點:1152, 平均:1862}}
+    ];
+
+    dashboard('#dashboard',freqData);
+  </script>
 </body>
