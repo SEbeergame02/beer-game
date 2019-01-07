@@ -161,7 +161,16 @@
             y = w.innerHeight|| e.clientHeight|| g.clientHeight;
         var svgSize = 0.6 * x;
         var svgPadding = 0.15 * y;
-        var svgSize2 = 0.6 * x;
-        var svgPadding2 = 0.15 * y;
+
+        function segColor(c){ return {低點:"#807dba", 高點:"#e08214",平均:"#41ab5d"}[c]; }
+
+        // compute total for each state.
+        fData.forEach(function(d){d.total=d.freq.低點+d.freq.高點+d.freq.平均;});
+
+        // function to handle histogram.
+        function histoGram(fD){
+            var hG={},    hGDim = {t: 60, r: svgPadding, b: 30, l: svgPadding};
+            hGDim.w = svgSize - hGDim.l - hGDim.r,
+            hGDim.h = 300 - hGDim.t - hGDim.b;
   </script>
 </body>
