@@ -16,6 +16,39 @@
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
   <title>Statistics</title>
 
+<style>
+  path {  stroke: #fff; }
+  path:hover {  opacity:0.9; }
+  rect:hover {  fill:blue; }
+  .axis {  font: 10px sans-serif; }
+  .legend tr{    border-bottom:1px solid grey; }
+  .legend tr:first-child{    border-top:1px solid grey; }
+
+  .axis path,
+  .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  }
+
+  .x.axis path {  display: none; }
+  .legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+  }
+  .legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+  }
+  .legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+  }
+</style>
+</head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="Home.html">BeerGame</a>
@@ -114,4 +147,21 @@
       </div>
     </div>
   </div>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script>
+    // D3.js 套件部分有稍微修改讓它看起來有點 RWD
+    function dashboard(id, fData){
+        var barColor = 'steelblue';
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+        var svgSize = 0.6 * x;
+        var svgPadding = 0.15 * y;
+        var svgSize2 = 0.6 * x;
+        var svgPadding2 = 0.15 * y;
+  </script>
 </body>
