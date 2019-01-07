@@ -51,4 +51,13 @@ img {
   background: rgba(248, 246, 246, 0.7);
   /* 先設這樣 之後再弄掉 */
   height: 550px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  color: rgb(35, 44, 83);
+  background: rgba(248, 246, 246, 0.7);
+  text-align: center;
 }
