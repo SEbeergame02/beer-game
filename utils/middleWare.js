@@ -11,6 +11,7 @@ var auth = (req, res, next) => {
                     err.status = 400;
                     return res.send(err.message);
                 } else {
+                    console.log(req.session);
                     req.user = user;
                     next();
                 }
