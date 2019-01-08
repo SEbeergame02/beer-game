@@ -14,7 +14,7 @@ socket.on("findRole", obj => {
 });
 
 socket.on("putRank", obj => {
-    
+    console.log(obj.rankArr);
 });
 
 

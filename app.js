@@ -40,7 +40,9 @@ io.on("connection", socket => {
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
             if (turn == 6) {
-                allTeams.getRank();
+                var rankArr = allTeams.getRank();
+                var score = rankArr.length - rankArr.findIndex(e => e.teamName == resTeam) + 1;
+                setScore(resUser, getScore(resUser) + score);
                 io.emit("end");
             } else {
                 io.emit("continue", { allTeams, turn });
