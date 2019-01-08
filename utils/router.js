@@ -6,6 +6,14 @@ const User = require("./user");
 
 var upload = multer({ dest: "public/uploads/" });
 
+
+router.get("/dashBoard", auth, (req, res) => {
+    res.render("dashBoard", {
+        name: req.user.username,
+        img: req.user.imgPath
+    });
+});
+
 router.get("/", auth, (req, res) => {
     res.render("home", {
         name: req.user.username,

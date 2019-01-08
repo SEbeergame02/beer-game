@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
   <title>Dashboard </title>
   <link href="Dashboard.css" rel="stylesheet">
 </head>
@@ -35,16 +35,15 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="/profile"><img src=<%=img%> /></a>&nbsp;
-        <a class="nav-link" href="/profile">
+        <a class="nav-link" href="/profile" id="userName">
           <%=name%></a>
         <a class="nav-link" href="/login" data-toggle="modal" data-target="#exampleModal">Logout <span class="sr-only">(current)</span></a>
       </ul>
     </div>
   </nav>
-  
+  <h1>Game Result</h1>
   <div class='content'>
-    <p>Game Result</p>
-    <hr class="style-two" />
+
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -52,6 +51,9 @@
         </div>
         <div class="col-sm">
           <canvas class="col-10" id="myChart1"></canvas>
+        </div>
+        <div class="col-sm">
+          <canvas class="col-10" id="myChart2"></canvas>
         </div>
       </div>
     </div>
@@ -63,70 +65,12 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../../../dist/js/bootstrap.min.js"></script>
 
 
   <!-- Graphs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-  <script>
-    var ctx = document.getElementById("myChart0");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        datasets: [{
-          label: "cost",
-          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff',
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false,
-        }
-      }
-    });
-    var ctx = document.getElementById("myChart1");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        datasets: [{
-          label: "cost",
-          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false,
-        }
-      }
-    });
-  </script>
+  <script src="../js/socket.io.js"></script>
+  <script src="../js/dashBoard.js"></script>
 </body>
 
 </html>
