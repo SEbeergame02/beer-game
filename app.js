@@ -39,7 +39,7 @@ io.on("connection", socket => {
         if (allTeams.status()) {
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
-            if (turn == 11) {
+            if (turn == 6) {
                 allTeams.getRank();
                 io.emit("end");
             } else {
