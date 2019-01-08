@@ -43,7 +43,7 @@
   </nav>
   <h1>Game Result</h1>
   <div class='content'>
-    
+
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -52,12 +52,69 @@
         <div class="col-sm">
           <canvas class="col-10" id="myChart1"></canvas>
         </div>
+      </div>
+      <br /><br />
+      <div class="row">
         <div class="col-sm">
-          <canvas class="col-10" id="myChart2"></canvas>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Ranking</th>
+                <th scope="col">Name</th>
+                <th scope="col">integral</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hello</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Hello</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Ranking</th>
+                <th scope="col">Name</th>
+                <th scope="col">integral</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hello</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Hello</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
+  </div>
+  </div>
+
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -101,34 +158,6 @@
       }
     });
     var ctx = document.getElementById("myChart1");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        datasets: [{
-          label: "cost",
-          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false,
-        }
-      }
-    });
-    var ctx = document.getElementById("myChart2");
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
