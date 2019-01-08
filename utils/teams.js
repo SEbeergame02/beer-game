@@ -35,7 +35,14 @@ class Teams {
         for (var i in this.allTeams) {
             lst.push({ "teamName": this.allTeams[i].teamName, "sumCost": this.allTeams[i].getCost() });
         }
-        return lst;
+        return lst.sort(this.compare);
+    }
+    compare(a, b) {
+        if (a.sumCost > b.sumCost)
+            return -1;
+        if (a.sumCost < b.sumCost)
+            return 1;
+        return 0;
     }
 }
 

@@ -48,7 +48,7 @@ io.on("connection", socket => {
         }
     });
 
-    socket.emit("putRank", allTeams.getRank());
+    socket.emit("putRank", { rankArr: allTeams.getRank() });
 
     socket.on("start", obj => {
         orderArr = obj.order;
