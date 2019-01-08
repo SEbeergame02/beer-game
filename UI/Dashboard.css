@@ -44,7 +44,7 @@ th, td {
 .content {
   background: rgba(248, 246, 246, 0.7);
   /* 先設這樣 之後再弄掉 */
-  height: 550px;
+  height: 900px;
   text-align: center;
 }
 
@@ -66,3 +66,12 @@ h2 {
   font-size: 24px;
   font-weight: bold;
 }
+
+.name {
+  border: 2px solid rgb(180, 179, 179);
+  border-radius: 25px;
+  width: 90%;
+  height: 100%;
+}
+
+
