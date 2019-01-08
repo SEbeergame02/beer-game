@@ -31,12 +31,13 @@ class Teams {
         });
     }
     getRank() {
-        var lst = [];
+        var lst = [{ "teamName": "java", "sumCost": 100 }, { "teamName": "python", "sumCost": 300 }, { "teamName": "nodejs", "sumCost": 200 }];
         for (var i in this.allTeams) {
             lst.push({ "teamName": this.allTeams[i].teamName, "sumCost": this.allTeams[i].getCost() });
         }
         return lst.sort(this.compare);
     }
+
     compare(a, b) {
         if (a.sumCost < b.sumCost)
             return -1;

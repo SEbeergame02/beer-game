@@ -75,11 +75,16 @@ h2 {
   font-size: 20px;
   font-family: 'Ubuntu Condensed', sans-serif;
 }
-.col{
+.col {
   text-align: left;
   padding-left:40px;
   padding-top:5px;
   
+}
+
+.back {
+  margin: 30px auto;
+  color: rgb(94, 91, 91);
 }
 
 
