@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
   <title>Dashboard </title>
   <link href="Dashboard.css" rel="stylesheet">
 </head>
@@ -51,9 +51,6 @@
         </div>
         <div class="col-sm">
           <canvas class="col-10" id="myChart1"></canvas>
-        </div>
-        <div class="col-sm">
-          <canvas class="col-10" id="myChart2"></canvas>
         </div>
       </div>
     </div>
@@ -101,34 +98,6 @@
       }
     });
     var ctx = document.getElementById("myChart1");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        datasets: [{
-          label: "cost",
-          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false,
-        }
-      }
-    });
-    var ctx = document.getElementById("myChart2");
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
