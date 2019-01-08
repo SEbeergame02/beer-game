@@ -15,7 +15,7 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <link rel="stylesheet" href="../css/login.css">
   <title>Login</title>
 
@@ -28,7 +28,7 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
       </ul>
@@ -44,32 +44,36 @@
       <div class="inner">
         <table class="tbl">
           <form method="post" action="/login">
-            <tr><th colspan="2">BeerGame Login Form</th></tr>
+            <tr>
+              <th colspan="2">BeerGame Login Form</th>
+            </tr>
             <tr>
               <th>UserName:</th>
-                <td>
-                  <input name="username" type="text" id="user"/>
-                </td>
-            </tr>
-            <tr>
-                <th>Password:</th>
-                <td>
-                  <label>
-                  <input name="password" type="password" id="pwd" />
-                  </label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                <button type="submit" class="btn btn-warning  btn-block" onclick="javascript:location.href='Home.html'" value="Submit" >Signin</button>
+              <td>
+                <input name="username" type="text" id="user" />
               </td>
-              </tr>
-              <tr>
-                  <td colspan="2" align="center">
-                  <button type="button" class="btn btn-info  btn-block" onclick="javascript:location.href='/register'" value="Signup">Signup</button>
-                </td>
-                </tr>
-            </form>
+            </tr>
+            <tr>
+              <th>Password:</th>
+              <td>
+                <label>
+                  <input name="password" type="password" id="pwd" />
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <button type="submit" class="btn btn-warning  btn-block" onclick="javascript:location.href='Home.html'"
+                  value="Submit">Signin</button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <button type="button" class="btn btn-info  btn-block" onclick="javascript:location.href='/register'"
+                  value="Signup">Signup</button>
+              </td>
+            </tr>
+          </form>
         </table>
       </div>
     </div>

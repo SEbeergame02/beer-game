@@ -1,5 +1,3 @@
-// const { Team } = require("./team");
-
 class Teams {
     constructor() {
         this.allTeams = [];
@@ -9,7 +7,6 @@ class Teams {
     }
     findTeam(name) {
         var team = this.allTeams.filter(team => {
-            // console.log(team.teamName);
             return team.teamName === name;
         })[0];
         return team;
