@@ -1,59 +1,37 @@
 body {
   font-size: .875rem;
-  background-image: url('./img/result.jpg');
+  background-image: url('../img/result.jpg');
   background-size: 100%;
 }
-
 img {
     width: 30px;
     height: 30px;
     margin-top: 15%;
 }
-
-/* @supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-} */
-
-/*
- * Content
- */
-
 [role="main"] {
-  padding-top: 48px; /*Space for fixed navbar */
+    padding-top: 48px; /*Space for fixed navbar */
 }
-
-/*
- * Navbar
- */
-
 .navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
 }
 #cav{
-  padding: 1em 4%;
-  width: 70%;
-
+    padding: 1em 4%;
+    width: 70%;
 }
-
 .col{
-  margin-left:25px;
+    margin-left:25px;
 }
 .col-10{
-  margin:80px 0px 0px 150px;
+  margin-top: 150px;
 }
-
 .content {
-  background: rgba(248, 246, 246, 0.7);
-  /* 先設這樣 之後再弄掉 */
-  height: 550px;
-  text-align: center;
+    background: rgba(248, 246, 246, 0.7);
+    /* 先設這樣 之後再弄掉 */
+    height: 550px;
+    text-align: center;
 }
-
 h1 {
   font-weight: bold;
   font-size: 60px;
