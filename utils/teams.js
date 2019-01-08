@@ -31,7 +31,7 @@ class Teams {
         });
     }
     getRank() {
-        var lst = [{ "teamName": "java", "sumCost": 100 }, { "teamName": "python", "sumCost": 300 }, { "teamName": "nodejs", "sumCost": 200 }];
+        var lst = [];
         for (var i in this.allTeams) {
             lst.push({ "teamName": this.allTeams[i].teamName, "sumCost": this.allTeams[i].getCost() });
         }
