@@ -24,19 +24,6 @@ class Team {
         return user;
     }
 
-    calCost(costArr, store) {
-        if (store < 0) {
-            store = Math.abs(store) * 2;
-        }
-        if (costArr.length === 0) {
-            costArr[0] = store;
-        }
-        else {
-            costArr[costArr.length] = costArr[costArr.length - 1] + store;
-        }
-        return costArr;
-    }
-
     calArr(user) {
         user.storeArr[user.storeArr.length] = user.store;
         user.orderArr[user.orderArr.length] = user.order;
@@ -143,8 +130,8 @@ class Team {
         return ret;
     }
     getCost() {
-        var sumCost;
-        for (i in this.users) {
+        var sumCost = 0;
+        for (var i in this.users) {
             sumCost += this.users[i].costArr[this.users.length - 1];
         }
         return sumCost;
