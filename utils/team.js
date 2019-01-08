@@ -12,9 +12,11 @@ class Team {
         this.teamName = obj.teamName;
         this.round = [];
     }
+
     addUser(obj) {
         this.users.push(new Player(obj.userName, obj.position));
     }
+
     findUser(name) {
         var user = this.users.filter(user => {
             return user.userName === name;
@@ -139,6 +141,13 @@ class Team {
             }
         });
         return ret;
+    }
+    getCost() {
+        var sumCost;
+        for (i in this.users) {
+            sumCost += this.users[i].costArr[this.users.length - 1];
+        }
+        return sumCost;
     }
     // removeUser(id) {
     //     var user = this.getUser(id);

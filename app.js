@@ -43,6 +43,7 @@ io.on("connection", socket => {
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
             if (turn == 11) {
+                allTeams.getRank();
                 io.emit("end");
             } else {
                 io.emit("continue", { allTeams, turn });
