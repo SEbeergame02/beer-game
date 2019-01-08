@@ -34,7 +34,6 @@
 <input name="submit" type="submit" value="Login" />
 </form>
 尚未註冊嗎?<a href='regist.php'>Regist Here</a>
-<?php } ?>
 
 
 </body>
