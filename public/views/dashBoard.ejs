@@ -18,12 +18,12 @@
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
   <title>Dashboard </title>
-  <link href="Dashboard.css" rel="stylesheet">
+  <link href="../css/dashBoard.css" rel="stylesheet">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="Home.html">BeerGame</a>
+    <a class="navbar-brand" href="/">BeerGame</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="/profile"><img src=<%=img%> /></a>&nbsp;
@@ -43,7 +42,6 @@
   </nav>
   <h1>Game Result</h1>
   <div class='content'>
-
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -51,9 +49,6 @@
         </div>
         <div class="col-sm">
           <canvas class="col-10" id="myChart1"></canvas>
-        </div>
-        <div class="col-sm">
-          <canvas class="col-10" id="myChart2"></canvas>
         </div>
       </div>
     </div>
@@ -65,8 +60,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-
-
   <!-- Graphs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
   <script src="../js/socket.io.js"></script>
