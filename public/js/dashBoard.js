@@ -13,6 +13,11 @@ socket.on("findRole", obj => {
     }
 });
 
+socket.on("putRank", obj => {
+    
+});
+
+
 function drawChart(costArr, orderArr) {
     var ctx = document.getElementById("myChart0");
     var myChart = new Chart(ctx, {
