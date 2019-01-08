@@ -40,14 +40,15 @@
       </ul>
     </div>
   </nav>
-  <h1>Game Result</h1>
   <div class='content'>
     <div class="container">
       <div class="row">
         <div class="col-sm">
+          <h2>Order</h2>
           <canvas class="col-10" id="myChart0"></canvas>
         </div>
         <div class="col-sm">
+          <h2>Cost</h2>
           <canvas class="col-10" id="myChart1"></canvas>
         </div>
       </div>
@@ -55,11 +56,12 @@
       <div class="row">
         <div class="col-sm">
           <table class="table table-hover">
-            <thead>
+            <thead class="thead-dark">
+              <!-- 列前三名即可 -->
               <tr>
-                <th scope="col">Ranking</th>
-                <th scope="col">Name</th>
-                <th scope="col">integral</th>
+                <th>Ranking</th>
+                <th>Team Name</th>
+                <th>Integral</th>
               </tr>
             </thead>
             <tbody>
@@ -67,13 +69,14 @@
                 <td>Hello</td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
               </tr>
               <tr>
                 <td>Hello</td>
                 <td></td>
                 <td></td>
+              </tr>
+              <tr>
+                <td>Hello</td>
                 <td></td>
                 <td></td>
               </tr>
@@ -81,31 +84,20 @@
           </table>
         </div>
         <div class="col-sm">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Ranking</th>
-                <th scope="col">Name</th>
-                <th scope="col">integral</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Hello</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Hello</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="name">
+            <div class="row">
+              <div class="col">
+                Your Name
+              </div>
+              <div class="col col-lg-3">
+                #1
+              </div>
+            </div>
+            <hr />
+            Integral:+3
+            <br />
+            Table of Ranking:3/10
+          </div>
         </div>
       </div>
     </div>
