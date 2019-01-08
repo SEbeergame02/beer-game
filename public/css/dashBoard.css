@@ -10,11 +10,16 @@ img {
     margin-top: 15%;
 }
 
-table.table-hover {
-  padding: 1em 4%;
-  width: 80%;
-  text-align: center;
-}
+/* @supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+} */
+
+/*
+ * Content
+ */
 
 [role="main"] {
   padding-top: 48px; /*Space for fixed navbar */
@@ -32,17 +37,14 @@ table.table-hover {
 #cav{
   padding: 1em 4%;
   width: 70%;
-}
 
-.col-10 {
-  margin-top: 20%;
 }
 
 .col{
   margin-left:25px;
 }
 .col-10{
-  margin-top:80px;
+  margin:80px 0px 0px 150px;
 }
 
 .content {
@@ -52,16 +54,10 @@ table.table-hover {
   text-align: center;
 }
 
-p {
+h1 {
   font-weight: bold;
   font-size: 60px;
   color: rgb(35, 44, 83);
+  background: rgba(248, 246, 246, 0.7);
   text-align: center;
-  font-family: 'Ubuntu Condensed', sans-serif;
-}
-
-hr.style-two {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }

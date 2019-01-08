@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
   <title>Dashboard </title>
-  <link href="../css/report.css" rel="stylesheet">
+  <link href="Dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="/profile"><img src=<%=img%> /></a>&nbsp;
-        <a class="nav-link" href="/profile">
+        <a class="nav-link" href="/profile" id="userName">
           <%=name%></a>
         <a class="nav-link" href="/login" data-toggle="modal" data-target="#exampleModal">Logout <span class="sr-only">(current)</span></a>
       </ul>
@@ -65,12 +65,12 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../../../dist/js/bootstrap.min.js"></script>
+
 
   <!-- Graphs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-  <script src="../js/report.js"></script>
+  <script src="../js/socket.io.js"></script>
+  <script src="../js/dashBoard.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ var auth = (req, res, next) => {
                     err.status = 400;
                     return res.send(err.message);
                 } else {
-                    console.log(req.session);
+                    // console.log(req.session);
                     req.user = user;
                     next();
                 }
@@ -22,4 +22,23 @@ var auth = (req, res, next) => {
     }
 };
 
-module.exports = { auth };
+var setScore = (userName, score) => {
+    User.findOneAndUpdate({ username: userName }, { $set: { score: score } }, { new: true }, (err, doc) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log(doc);
+    });
+}
+
+var getScore = (userName) => {
+    User.findOne({ username: userName }, (err, doc) => {
+        if (err) {
+            return err;
+        }
+        return doc.score;
+    });
+}
+
+module.exports = { auth, setScore, getScore };
+
