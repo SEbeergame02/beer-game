@@ -31,7 +31,7 @@ io.on("connection", socket => {
         callback();
     });
 
-    socket.on("sendOrder", obj => {
+    socket.on("sendOrder", async (obj) => {
         var resTeam = allTeams.findTeam(obj.teamName);
         var resUser = resTeam.findUser(obj.userName);
         resUser.order = parseInt(obj.order);
@@ -41,9 +41,19 @@ io.on("connection", socket => {
             turn = turn + 1;
             if (turn == 6) {
                 var rankArr = allTeams.getRank();
-                var score = rankArr.length - rankArr.findIndex(e => e.teamName == resTeam) + 1;
-                setScore(resUser, getScore(resUser) + score);
+
+                for (var i in allTeams.allTeams) {
+                    for (var j in allTeams.allTeams[i].users) {
+                        var uname = allTeams.allTeams[i].users[j].userName;
+                        var score = rankArr.length - rankArr.findIndex(e => e.teamName == allTeams.allTeams[i].teamName);
+                        getScore(uname, (e) => {
+                            setScore(uname, score + e);
+                        });
+                    }
+                }
+
                 io.emit("end");
+
             } else {
                 io.emit("continue", { allTeams, turn });
             }

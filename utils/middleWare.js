@@ -25,18 +25,18 @@ var auth = (req, res, next) => {
 var setScore = (userName, score) => {
     User.findOneAndUpdate({ username: userName }, { $set: { score: score } }, { new: true }, (err, doc) => {
         if (err) {
-            console.log(err);
+            return console.log(err);
         }
-        console.log(doc);
+        return console.log(doc);
     });
 }
 
-var getScore = (userName) => {
+var getScore = (userName, callback) => {
     User.findOne({ username: userName }, (err, doc) => {
         if (err) {
-            return err;
+            return console.log(err);
         }
-        return doc.score;
+        return callback(doc.score);
     });
 }
 
