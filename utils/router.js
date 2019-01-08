@@ -6,7 +6,6 @@ const User = require("./user");
 
 var upload = multer({ dest: "public/uploads/" });
 
-
 router.get("/dashBoard", auth, (req, res) => {
     res.render("dashBoard", {
         name: req.user.username,
@@ -117,6 +116,5 @@ router.get("/profile", auth, (req, res) => {
         score: req.user.score
     });
 });
-
 
 module.exports = router;
