@@ -113,7 +113,8 @@ router.get("/login", (req, res) => {
 router.get("/profile", auth, (req, res) => {
     return res.render("profile", {
         name: req.user.username,
-        img: req.user.imgPath
+        img: req.user.imgPath,
+        score: req.user.score
     });
 });
 

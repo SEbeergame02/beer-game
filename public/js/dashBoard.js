@@ -2,7 +2,7 @@ var socket = io({ transports: ["websocket"], upgrade: false });
 var curUser = $("#userName").html().replace(/^\s+|\s+$/g, '');
 
 socket.on("findRole", obj => {
-    console.log(obj);
+    // console.log(obj);
     for (var i in obj.allTeams.allTeams) {
         for (var j in obj.allTeams.allTeams[i].users) {
             if (obj.allTeams.allTeams[i].users[j].userName === curUser) {
@@ -14,7 +14,24 @@ socket.on("findRole", obj => {
 });
 
 socket.on("putRank", obj => {
-    
+    var str = `
+            <thead class="thead-dark">
+              <tr>
+                <th>Ranking</th>
+                <th>Team Name</th>
+                <th>Integral</th>
+              </tr>
+            </thead>
+            <tbody>
+    `
+    for(let i = 0; i < obj.rankArr.length; i++) {
+        str += "<tr><td>" + (i + 1) + "</td>";
+        str += `<td>${obj.rankArr[i].teamName}</td>`;
+        str += `<td> ${ obj.rankArr.length - (i + 1) + 1 }</td></tr>`;
+    }
+
+    str += "</tbody>"
+    $("#rankTbl").html(str);
 });
 
 

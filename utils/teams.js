@@ -38,9 +38,9 @@ class Teams {
         return lst.sort(this.compare);
     }
     compare(a, b) {
-        if (a.sumCost > b.sumCost)
-            return -1;
         if (a.sumCost < b.sumCost)
+            return -1;
+        if (a.sumCost > b.sumCost)
             return 1;
         return 0;
     }
