@@ -30,6 +30,13 @@ class Teams {
             team.reset(turn, cust);
         });
     }
+    getRank() {
+        var lst = [];
+        for (i in this.allTeams) {
+            lst.push({ "teamName": this.allTeams[i].teamName, "sumCost": this.allTeams[i].calCost() });
+        }
+        console.log(lst);
+    }
 }
 
 module.exports = { Teams };

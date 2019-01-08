@@ -11,9 +11,6 @@ var allTeams = new Teams();
 var orderArr; //customer order array define by admin
 var turn = 0;
 
-allTeams.addTeam(new Team({ userName: "bryan", position: "Retailer", teamName: "javaTeam" }));
-// allTeams.addTeam(new Team({ userName: "python", position: "Factory", teamName: "pythonTeam" }));
-
 io.on("connection", socket => {
     console.log("new user connect", socket.id);
 
@@ -43,6 +40,7 @@ io.on("connection", socket => {
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
             if (turn == 11) {
+                allTeams.getRank();
                 io.emit("end");
             } else {
                 io.emit("continue", { allTeams, turn });
