@@ -1,17 +1,16 @@
 body {
     font-size: .875rem;
+    background-image: url('../img/result.jpg');
+    background-size: 100%;
 }
-
 img {
     width: 30px;
     height: 30px;
     margin-top: 15%;
 }
-
 [role="main"] {
     padding-top: 48px; /*Space for fixed navbar */
 }
-
 .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -19,13 +18,24 @@ img {
 }
 #cav{
     padding: 1em 4%;
-    width: 80%;
-
+    width: 70%;
 }
-
 .col{
     margin-left:25px;
 }
 .col-10{
-    margin:80px 0px 0px 150px;
+    margin-top: 150px;
+}
+.content {
+    background: rgba(248, 246, 246, 0.7);
+    /* 先設這樣 之後再弄掉 */
+    height: 550px;
+    text-align: center;
+}
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+    color: rgb(35, 44, 83);
+    background: rgba(248, 246, 246, 0.7);
+    text-align: center;
 }
