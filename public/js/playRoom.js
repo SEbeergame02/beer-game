@@ -3,14 +3,39 @@ var curUser = $("#userName").html().replace(/^\s+|\s+$/g, '');
 
 // 對應使用者的角色顯示不同標題和圖片
 
-socket.on("findRole", allTeams => {
-    for (var i in allTeams.allTeams) {
-        for (var j in allTeams.allTeams[i].users) {
-            if (allTeams.allTeams[i].users[j].userName === curUser) {
-                getImg = '../img/' + allTeams.allTeams[i].users[j].position + '2.jpg';
+socket.on("findRole", obj => {
+    for (var i in obj.allTeams.allTeams) {
+        for (var j in obj.allTeams.allTeams[i].users) {
+            if (obj.allTeams.allTeams[i].users[j].userName === curUser) {
+                getImg = '../img/' + obj.allTeams.allTeams[i].users[j].position + '2.jpg';
+                // console.log(getImg);
                 $("#F").attr("src", getImg);
-                $("#role").html(allTeams.allTeams[i].users[j].position);
-                $("#teamName").html(allTeams.allTeams[i].teamName);
+                $("#role").html(obj.allTeams.allTeams[i].users[j].position);
+                $("#teamName").html(obj.allTeams.allTeams[i].teamName);
+                $("#store").text(obj.allTeams.allTeams[i].users[j].store);
+                $("#liab").text(obj.allTeams.allTeams[i].users[j].debt);
+                var tbl = $(".inner").html();
+                var user = obj.allTeams.allTeams[i].users[j];
+                console.log(user);
+                for (var k = 0; k < obj.turn; k++) {
+                    tbl += `<tr class='te'>`;
+                    tbl += `<td class='te'>${k}</td>`;
+                    tbl += `<td class='te'>${user.storeArr[k]}</td>`;
+                    tbl += `<td class='te'>${user.orderArr[k]}</td>`;
+                    tbl += `<td class='te'>${user.debtArr[k]}</td>`;
+                    // 當期成本
+
+                    if (user.debt > 0) {
+                        tbl += `<td class='te'>${user.debt * 2}</td>`;
+                    } else {
+                        tbl += `<td class='te'>${user.store}</td>`;
+                    }
+                    // 累積成本
+                    tbl += `<td class='te'>${user.costArr[obj.turn - 1]}</td>`;
+                    tbl += `</tr>`;
+                }
+                $(".inner").html(tbl);
+                $("#turn").text(obj.turn);
             }
         }
     }
