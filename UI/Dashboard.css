@@ -10,16 +10,11 @@ img {
     margin-top: 15%;
 }
 
-/* @supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-} */
-
-/*
- * Content
- */
+table.table-hover {
+  padding: 1em 4%;
+  width: 80%;
+  text-align: center;
+}
 
 [role="main"] {
   padding-top: 48px; /*Space for fixed navbar */
@@ -37,7 +32,6 @@ img {
 #cav{
   padding: 1em 4%;
   width: 70%;
-
 }
 
 .col-10 {
@@ -46,6 +40,9 @@ img {
 
 .col{
   margin-left:25px;
+}
+.col-10{
+  margin-top:80px;
 }
 
 .content {
