@@ -109,5 +109,5 @@ socket.on("start", () => {
 });
 
 socket.on("end", () => {
-    alert("end");
+    window.location.replace("/dashBoard");
 });
