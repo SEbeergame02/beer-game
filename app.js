@@ -39,7 +39,7 @@ io.on("connection", socket => {
         if (allTeams.status()) {
             allTeams.reset(turn, parseInt(orderArr[turn - 1]));
             turn = turn + 1;
-            if (turn == 2) {
+            if (turn == 6) {
                 var rankArr = allTeams.getRank();
 
                 for (let i in allTeams.allTeams) {
